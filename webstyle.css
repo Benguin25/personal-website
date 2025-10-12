@@ -1,0 +1,165 @@
+body {
+  padding: 25px; 
+  background-color: #323232;
+  color: rgb(142, 157, 255);
+  /* #E91E63 - save this colour to use as an accent*/
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: right;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a:last-of-type {
+  margin-right: 25px; /* have a right margin if it the last in the nav bar */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+customHeader {
+  display: block; /* Ensure it's a block-level element */
+  text-align: center;
+  color: rgb(142, 157, 255);
+  font-size: 48px;
+}
+
+h1 {
+  text-align: left;
+}
+
+h2 {
+  color: white;
+}
+
+/*2 column text*/
+.two-column-text {
+  column-count: 2;
+  column-gap: 22px;
+}
+
+/* this code ensures that every div (excepyt the first) moves the text to the next column */
+.two-column-text > div:not(:first-child) {
+  break-before: column;
+}
+
+/*3 column text*/
+.three-column-text {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+/* this code ensures that every div (excepyt the first) moves the text to the next column */
+.three-column-text > div:not(:first-child) {
+  break-before: column;
+}
+
+/*4 column text*/
+.four-column-text {
+  column-count: 4;
+  column-gap: 15px;
+}
+
+/* this code ensures that every div (excepyt the first) moves the text to the next column */
+.four-column-text > div:not(:first-child) {
+  break-before: column;
+}
+
+/* Code for image gallery here (on about page) */
+.gallery {
+  text-align: center; /* Centering */
+}
+
+.gallery img {
+  width: 17%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+  margin: 1%;
+  vertical-align: top;
+}
+
+.gallery img:hover {
+  transform: scale(1.25);
+  z-index: 10;
+}
+
+a.custom-link {
+  color: #d4d7ff;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a.custom-link:hover {
+  color: #c0c0c0;
+}
+
+a.custom-link2 {
+  color: rgb(142,157,255);
+  transition: color 0.3s ease;
+  font-style: italic;
+}
+
+a.custom-link2:hover {
+  color: #c0c0c0;
+}
+
+/* code here to account for mobile devices */
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  /* Center the navigation links and display them vertically */
+  nav {
+    text-align: center;
+  }
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  /* Adjust column layouts to a single column on small screens */
+  .two-column-text,
+  .three-column-text,
+  .four-column-text {
+    column-count: 1;
+  }
+  
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+  
+  body {
+    padding: 10px;
+  }
+}
+
+/* For iPhones and other devices with a screen width of 480px or less, stack columns */
+@media only screen and (max-width: 480px) {
+  .two-column-text,
+  .three-column-text {
+    flex-direction: column;
+  }
+  
+  .two-column-text > div,
+  .three-column-text > div {
+    flex: 1 1 100%;
+  }
+}
