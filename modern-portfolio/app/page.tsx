@@ -13,7 +13,7 @@ export default function Home() {
         
         {/* Animated background particles */}
         <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-primary-400 rounded-full"
@@ -22,11 +22,11 @@ export default function Home() {
                 top: `${Math.random() * 100}%`,
               }}
               animate={{
-                y: [0, -20, 0],
-                opacity: [0.2, 1, 0.2],
+                y: [0, -10, 0],
+                opacity: [0.3, 0.8, 0.3],
               }}
               transition={{
-                duration: 3 + Math.random() * 2,
+                duration: 4 + Math.random() * 2,
                 repeat: Infinity,
                 delay: Math.random() * 2,
               }}
@@ -150,38 +150,20 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="flex justify-center lg:justify-end"
             >
-              <div className="relative">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="relative w-80 h-96 md:w-96 md:h-[480px]"
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary-400/20 to-accent-400/20 p-1">
-                    <div className="w-full h-full rounded-2xl bg-dark-900 p-2">
-                      <img
-                        src="/images/profile.jpg"
-                        alt="Benjamin Probert"
-                        className="w-full h-full rounded-xl object-cover"
-                      />
-                    </div>
+              <div className="relative w-80 h-96 md:w-96 md:h-[480px]">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary-400/20 to-accent-400/20 p-1">
+                  <div className="w-full h-full rounded-2xl bg-dark-900 p-2">
+                    <img
+                      src="/images/profile.jpg"
+                      alt="Benjamin Probert"
+                      className="w-full h-full rounded-xl object-cover"
+                      loading="eager"
+                    />
                   </div>
-                </motion.div>
-                
-                {/* Floating accent elements */}
-                <motion.div
-                  animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full opacity-20 blur-xl"
-                />
-                <motion.div
-                  animate={{ y: [0, 10, 0], rotate: [0, -5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                  className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-accent-400 to-primary-400 rounded-full opacity-20 blur-xl"
-                />
+                </div>
               </div>
             </motion.div>
           </div>

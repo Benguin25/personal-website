@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export default function Hobbies() {
   const mainHobbies = [
@@ -120,11 +119,11 @@ export default function Hobbies() {
                       transition={{ duration: 0.3 }}
                       className={`relative h-64 lg:h-96 overflow-hidden rounded-2xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                     >
-                      <Image
+                      <img
                         src={hobby.image}
                         alt={hobby.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
                     </motion.div>
@@ -178,11 +177,11 @@ export default function Hobbies() {
                       transition={{ duration: 0.3 }}
                       className="relative h-64 overflow-hidden rounded-xl mb-4"
                     >
-                      <Image
+                      <img
                         src={hobby.image}
                         alt={hobby.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 border-2 border-white/20 rounded-xl"></div>
                     </motion.div>

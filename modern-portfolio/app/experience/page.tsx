@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { Calendar, MapPin, Award, Users, BookOpen } from 'lucide-react'
 
 export default function Experience() {
@@ -203,11 +202,11 @@ export default function Experience() {
                         transition={{ duration: 0.3 }}
                         className={`relative h-64 lg:h-80 overflow-hidden rounded-2xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                       >
-                        <Image
+                        <img
                           src={exp.image}
                           alt={exp.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
                       </motion.div>

@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { ExternalLink, Github, Youtube } from 'lucide-react'
 
 export default function Projects() {
@@ -133,11 +132,11 @@ export default function Projects() {
                       transition={{ duration: 0.3 }}
                       className={`relative h-64 lg:h-80 overflow-hidden rounded-2xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                     >
-                      <Image
+                      <img
                         src={project.image}
                         alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-dark-900/30 to-transparent"></div>
                     </motion.div>

@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export default function About() {
   const images = [
@@ -68,11 +67,11 @@ export default function About() {
                   }}
                   className="relative h-80 overflow-hidden rounded-xl cursor-pointer group z-0 hover:z-10"
                 >
-                  <Image
+                  <img
                     src={image.src}
                     alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.div>
@@ -143,11 +142,11 @@ export default function About() {
                 viewport={{ once: true }}
                 className="order-1 lg:order-2 relative h-96 overflow-hidden rounded-2xl"
               >
-                <Image
+                <img
                   src="/images/graduation.jpg"
                   alt="Graduation"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
               </motion.div>
@@ -168,11 +167,11 @@ export default function About() {
                 viewport={{ once: true }}
                 className="relative h-96 overflow-hidden rounded-2xl"
               >
-                <Image
+                <img
                   src="/images/personal.jpg"
                   alt="Personal Goals"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 border-4 border-accent-400/30 rounded-2xl"></div>
               </motion.div>
