@@ -155,7 +155,7 @@ export default function Experience() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 mt-16">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16">
               My <span className="gradient-text">Experience</span>
             </h1>
           </motion.div>
