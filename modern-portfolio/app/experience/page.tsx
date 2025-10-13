@@ -82,15 +82,13 @@ export default function Experience() {
 
   const volunteerExperiences = [
     {
-      title: 'VP Internal Affairs',
-      organization: 'School of Computer and Information Sciences (SOCIS)',
-      period: 'September 2024 – Present',
+      title: 'Vice President of Internal Affairs for School of Computer and Information Sciences (SOCIS)',
+      organization: 'University of Guelph',
+      period: 'April 2025 – Present',
       description: [
-        'Coordinate internal SOCIS operations and facilitate communication between executive members',
-        'Organize and manage executive meetings, ensuring productive discussions and decision-making',
-        'Maintain detailed records of meeting minutes, decisions, and action items for organizational transparency',
-        'Support event planning and execution for SOCIS activities and student engagement initiatives',
-        'Foster collaboration between different departments within the computer science community'
+        'Coordinate internal operations and facilitate executive communication',
+        'Organize and manage executive meetings for productive decision-making',
+        'Maintain detailed records of meeting minutes and organizational decisions'
       ]
     },
     {
@@ -278,7 +276,7 @@ export default function Experience() {
           >
             <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Volunteer Experience</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {volunteerExperiences.map((vol, index) => (
                 <motion.div
                   key={vol.title}
