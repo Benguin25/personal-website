@@ -99,8 +99,8 @@ const Footer = () => {
               © {currentYear} Benjamin Probert. All Rights Reserved.
             </p>
             <div className="text-gray-400 text-sm mt-4 md:mt-0">
-              Made by BP 
-              <span className="text-accent-400"> (with way too much caffeine ☕)</span>
+              Made by BP | 
+              <span className="text-accent-400"> Hoping recruiters read this far 👀</span>
             </div>
           </div>
         </motion.div>

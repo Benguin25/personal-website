@@ -54,13 +54,13 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text glow-text mb-8">
-              My Projects
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 mt-16">
+              My <span className="gradient-text">Projects</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore my featured projects that showcase my passion for development, creativity, and problem-solving.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Exploring technology through hands-on development
             </p>
           </motion.div>
 

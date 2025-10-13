@@ -153,10 +153,10 @@ export default function Experience() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text glow-text mb-8">
-              My Experience
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 mt-16">
+              My <span className="gradient-text">Experience</span>
             </h1>
           </motion.div>
 
