@@ -7,6 +7,15 @@ import { ExternalLink, Github, Youtube } from 'lucide-react'
 export default function Projects() {
   const projects = [
     {
+      title: 'Am I Cooked?',
+      description: 'A witty web application that analyzes your life choices and tells you if you\'re "cooked"!',
+      longDescription: 'Am I Cooked? is a full-stack web application that uses AI to analyze user inputs about their life situation and provides humorous feedback on whether they\'re in trouble. Built with modern web technologies and featuring a responsive design with interactive elements.',
+      image: '/images/amICooked.png',
+      github: 'https://github.com/Benguin25/am-i-cooked',
+      technologies: ['React', 'TypeScript', 'Node.js', 'AI Integration', 'Full-Stack'],
+      color: 'from-red-500 to-orange-600'
+    },
+    {
       title: 'Capitalist FC',
       description: 'Ready to build your football empire? Welcome to Capitalist FC!',
       longDescription: 'This game is a spinoff of the mobile game Adventure Capitalist, with a twist! You can choose your club name and jersey, hire managers, purchase players, & buy upgrades to get 10000 fans as quick as possible!',
@@ -47,7 +56,7 @@ export default function Projects() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold gradient-text glow-text mb-8">
               My Projects
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">

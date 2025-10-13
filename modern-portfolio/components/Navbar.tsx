@@ -22,7 +22,6 @@ const Navbar = () => {
     { href: '/about', label: 'About' },
     { href: '/projects', label: 'Projects' },
     { href: '/experience', label: 'Experience' },
-    { href: '/hobbies', label: 'Hobbies' },
   ]
 
   return (
@@ -44,7 +43,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link href="/" className="text-2xl font-bold gradient-text">
-              BP
+              B. Probert
             </Link>
           </motion.div>
 

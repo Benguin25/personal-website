@@ -50,9 +50,6 @@ const Footer = () => {
               <a href="/experience" className="block hover:text-primary-400 transition-colors duration-300">
                 Experience
               </a>
-              <a href="/hobbies" className="block hover:text-primary-400 transition-colors duration-300">
-                Hobbies
-              </a>
             </div>
           </motion.div>
 
@@ -102,29 +99,8 @@ const Footer = () => {
               © {currentYear} Benjamin Probert. All Rights Reserved.
             </p>
             <div className="text-gray-400 text-sm mt-4 md:mt-0">
-              Made with{' '}
-              <span className="text-accent-400">❤️</span>
-              {' '}by{' '}
-              <a
-                href="https://github.com/AdamMontgomery"
-                className="hover:text-primary-400 transition-colors duration-300"
-              >
-                Adam Montgomery
-              </a>
-              ,{' '}
-              <a
-                href="https://github.com/Benguin25"
-                className="hover:text-primary-400 transition-colors duration-300"
-              >
-                Benjamin Probert
-              </a>
-              {' '}& {' '}
-              <a
-                href="https://github.com/NathanProbert"
-                className="hover:text-primary-400 transition-colors duration-300"
-              >
-                Nathan Probert
-              </a>
+              Made by BP 
+              <span className="text-accent-400"> (with way too much caffeine ☕)</span>
             </div>
           </div>
         </motion.div>

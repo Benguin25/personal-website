@@ -4,12 +4,36 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 export default function About() {
-  const images = [
-    { src: '/images/aboutMe1.jpg', alt: 'About me Image 1' },
-    { src: '/images/aboutMe2.JPG', alt: 'About me Image 2' },
-    { src: '/images/aboutMe3.jpg', alt: 'About me Image 3' },
-    { src: '/images/aboutMe4.jpg', alt: 'About me Image 4' },
-    { src: '/images/aboutMe5.jpg', alt: 'About me Image 5' },
+  const techSkills = [
+    { name: 'Python', icon: '🐍' },
+    { name: 'Java', icon: '☕' },
+    { name: 'JavaScript', icon: '⚡' },
+    { name: 'React', icon: '⚛️' },
+    { name: 'AI/ML', icon: '🤖' },
+    { name: 'Git', icon: '🔧' }
+  ]
+
+  const interests = [
+    {
+      title: 'Artificial Intelligence',
+      description: 'Passionate about machine learning, neural networks, and AI applications.',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      title: 'Game Development',
+      description: 'Creating interactive experiences and learning game engines.',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      title: 'Embedded Systems',
+      description: 'IoT development and hardware-software integration.',
+      color: 'from-green-500 to-teal-500'
+    },
+    {
+      title: 'Computer Vision',
+      description: 'Image processing, pattern recognition, and visual AI.',
+      color: 'from-orange-500 to-red-500'
+    }
   ]
 
   return (
@@ -23,7 +47,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold gradient-text glow-text mb-8">
               About Me
             </h1>
           </motion.div>
@@ -38,42 +62,71 @@ export default function About() {
           >
             <h2 className="text-4xl font-bold gradient-text mb-8">Introduction</h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Hi, I'm Benjamin Probert, a first year student from Markham, Ontario. 
+              Hi, I'm B. Probert, a first year student from Markham, Ontario. 
               I am currently studying for my Bachelor of Computing degree, majoring in Computer Science Honours, 
               with a minor in Statistics at the University of Guelph. 
-              I have a strong passion in Artificial Intelligence, Game Development, Embedded Systems (IoT), and Computer Vision.
+              I have a strong passion for Artificial Intelligence, Game Development, Embedded Systems (IoT), and Computer Vision.
             </p>
           </motion.div>
 
-          {/* Image Gallery */}
+          {/* Tech Skills */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {images.map((image, index) => (
+            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Tech Stack</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {techSkills.map((skill, index) => (
                 <motion.div
-                  key={index}
+                  key={skill.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.1,
-                    transition: { duration: 0.3 }
-                  }}
-                  className="relative h-80 overflow-hidden rounded-xl cursor-pointer group z-0 hover:z-10"
+                  whileHover={{ scale: 1.1 }}
+                  className="glass-effect p-6 rounded-2xl text-center group cursor-pointer"
                 >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">
+                    {skill.icon}
+                  </div>
+                  <h3 className="text-white font-semibold">{skill.name}</h3>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* CS Interests */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Areas of Interest</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {interests.map((interest, index) => (
+                <motion.div
+                  key={interest.title}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="glass-effect rounded-2xl overflow-hidden group cursor-pointer"
+                >
+                  <div className={`h-2 bg-gradient-to-r ${interest.color}`}></div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {interest.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {interest.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -91,7 +144,7 @@ export default function About() {
               <h3 className="text-3xl font-bold gradient-text mb-6">Why Computer Science?</h3>
               <p className="text-gray-300 leading-relaxed">
                 I have always been interested in Computer Science. Growing up with computers, I have always been fascinated to learn about new technologies
-                and innovations, or specifically, coding. Ever since I began coding on Scratch in elementary school, I have always had a passion
+                and innovations, specifically coding. Ever since I began coding on Scratch in elementary school, I have always had a passion
                 for it, and knew that I would end up in this field. Its blend of logical reasoning, creativity, and practical application makes it 
                 an exciting choice for me.
               </p>
@@ -104,90 +157,48 @@ export default function About() {
               viewport={{ once: true }}
               className="glass-effect p-8 rounded-2xl"
             >
-              <h3 className="text-3xl font-bold gradient-text mb-6">Why University of Guelph?</h3>
+              <h3 className="text-3xl font-bold gradient-text mb-6">Academic Excellence</h3>
               <p className="text-gray-300 leading-relaxed">
-                The day that I took a tour to the University of Guelph was the day I fell in love with the campus.
-                Additionally, my brother, who is two years older than me, also attends the University of Guelph for Computer Science. Maybe it runs in the family!
-                Finally, the opportunity to work alongside inspiring professors and peers in a supportive environment will help me grow 
-                both academically and personally as I pursue my goals in Computer Science at UofG.
+                I am driven by academic excellence and personal growth. I'm on the Dean's Honour List for my first semester at UofG 
+                with a GPA of 93.4%. I was on honour roll all four years of high school. I'm also hoping to join SOCIS's executive team 
+                as VP of Internal Affairs to contribute to the computer science community.
               </p>
             </motion.div>
           </div>
 
-          {/* Goals Section */}
-          <div className="space-y-16">
-            {/* Academic Goals */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            >
-              <div className="order-2 lg:order-1">
-                <h3 className="text-4xl font-bold gradient-text mb-6">Academic Goals</h3>
-                <div className="glass-effect p-8 rounded-2xl">
-                  <p className="text-gray-300 leading-relaxed">
-                    I am driven by a passion for academic excellence and personal growth. Academically, I prioritize my grades over
-                    anything else. I am on the Dean's Honour's List for my first semester at UOFG. I have been honour roll at my high school
-                    all four years that I attended. My GPA for my first semester was a 93.4%, and I plan to keep it similar for my following semesters.
-                    As for clubs, I am hoping to join the executive team as SOCIS's VP of Internal Affairs!
-                  </p>
-                </div>
+          {/* Sports & Activities Summary */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="glass-effect p-12 rounded-3xl">
+              <h3 className="text-3xl font-bold gradient-text mb-6">
+                Beyond Coding
+              </h3>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                When I'm not coding, I stay active through sports like hockey and baseball (both competitively), 
+                volleyball intramurals at UofG, and various outdoor activities. These experiences have taught me 
+                valuable lessons about teamwork, discipline, and perseverance that I apply to my programming projects.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <span className="px-4 py-2 bg-primary-500/20 text-primary-300 rounded-full text-sm font-medium">
+                  🏒 Hockey
+                </span>
+                <span className="px-4 py-2 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">
+                  ⚾ Baseball
+                </span>
+                <span className="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium">
+                  🏐 Volleyball
+                </span>
+                <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                  ⛷️ Outdoor Sports
+                </span>
               </div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="order-1 lg:order-2 relative h-96 overflow-hidden rounded-2xl"
-              >
-                <img
-                  src="/images/graduation.jpg"
-                  alt="Graduation"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
-              </motion.div>
-            </motion.div>
-
-            {/* Personal Goals */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="relative h-96 overflow-hidden rounded-2xl"
-              >
-                <img
-                  src="/images/personal.jpg"
-                  alt="Personal Goals"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 border-4 border-accent-400/30 rounded-2xl"></div>
-              </motion.div>
-              <div>
-                <h3 className="text-4xl font-bold gradient-text mb-6">Personal Goals</h3>
-                <div className="glass-effect p-8 rounded-2xl">
-                  <p className="text-gray-300 leading-relaxed">
-                    As for personal goals, there are many things I strive to accomplish in my life. A major goal of mine is to travel the world, 
-                    immersing myself in different cultures, admiring the beauty of our planet, and broadening my perspective on the world.
-                    An equally important goal is my desire to build a loving, close-knit family. Finally, on a more physical note, I have the drive
-                    to stay active in sports and to keep up with my overall health as I age.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -51,7 +51,7 @@ export default function Home() {
                   className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
                 >
                   Hi, I'm{' '}
-                  <span className="gradient-text">Benjamin Probert</span>
+                  <span className="gradient-text glow-text">Benjamin Probert</span>
                 </motion.h1>
                 
                 <motion.h2

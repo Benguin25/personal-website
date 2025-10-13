@@ -7,6 +7,36 @@ import { Calendar, MapPin, Award, Users, BookOpen } from 'lucide-react'
 export default function Experience() {
   const workExperiences = [
     {
+      title: 'Software Developer',
+      company: 'Reservely',
+      location: 'Remote',
+      period: 'October 2024 – Present',
+      image: '/images/reservely.png',
+      responsibilities: [
+        'Developed full-stack restaurant reservation system using React, Node.js, and PostgreSQL',
+        'Implemented real-time table booking features with dynamic availability tracking',
+        'Built responsive user interface components with modern design principles',
+        'Collaborated on database design and API development for reservation management',
+        'Integrated payment processing and email notification systems'
+      ],
+      color: 'from-purple-500 to-blue-500'
+    },
+    {
+      title: 'Coding Instructor',
+      company: 'Code Ninjas',
+      location: 'Markham, Ontario',
+      period: 'September 2023 – June 2024',
+      image: '/images/codeNinjas.png',
+      responsibilities: [
+        'Taught programming fundamentals to children aged 7-14 using Scratch and JavaScript',
+        'Mentored students through game development projects and coding challenges',
+        'Created engaging lesson plans that made complex programming concepts accessible',
+        'Monitored student progress and provided personalized feedback to enhance learning',
+        'Fostered a collaborative learning environment that encouraged creativity and problem-solving'
+      ],
+      color: 'from-orange-500 to-red-500'
+    },
+    {
       title: 'Camp Counsellor',
       company: 'Camp Green Acres',
       location: 'Markham, Ontario',
@@ -125,7 +155,7 @@ export default function Experience() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold gradient-text glow-text mb-8">
               My Experience
             </h1>
           </motion.div>
