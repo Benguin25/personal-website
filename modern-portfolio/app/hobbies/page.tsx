@@ -81,26 +81,9 @@ export default function Hobbies() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative mx-auto mb-8 w-full h-32 overflow-hidden rounded-2xl"
-            >
-              <Image
-                src="/images/hobbies.jpg"
-                alt="Hobbies Header"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-900/50 to-accent-900/50"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-5xl md:text-7xl font-bold text-white">
-                  My <span className="gradient-text">Hobbies</span>
-                </h1>
-              </div>
-            </motion.div>
+            <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-8">
+              My Hobbies
+            </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Discover the sports and activities that keep me active, motivated, and constantly learning.
             </p>

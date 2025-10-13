@@ -48,26 +48,9 @@ export default function Projects() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative mx-auto mb-8 w-full h-32 overflow-hidden rounded-2xl"
-            >
-              <Image
-                src="/images/projects.jpg"
-                alt="Projects Header"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-900/50 to-accent-900/50"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-5xl md:text-7xl font-bold text-white">
-                  My <span className="gradient-text">Projects</span>
-                </h1>
-              </div>
-            </motion.div>
+            <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-8">
+              My Projects
+            </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Explore my featured projects that showcase my passion for development, creativity, and problem-solving.
             </p>
@@ -163,34 +146,6 @@ export default function Projects() {
               </motion.div>
             ))}
           </div>
-
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mt-20"
-          >
-            <div className="glass-effect p-12 rounded-3xl">
-              <h3 className="text-3xl font-bold gradient-text mb-6">
-                Want to collaborate?
-              </h3>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                I'm always excited to work on new projects and explore innovative ideas. 
-                Let's create something amazing together!
-              </p>
-              <motion.a
-                href="mailto:bprobert@uoguelph.ca"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300"
-              >
-                <ExternalLink size={20} />
-                Get In Touch
-              </motion.a>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
