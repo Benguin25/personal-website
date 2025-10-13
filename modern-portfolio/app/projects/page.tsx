@@ -10,8 +10,10 @@ export default function Projects() {
       title: 'Am I Cooked?',
       description: 'A witty web application that analyzes your life choices and tells you if you\'re "cooked"!',
       longDescription: 'Am I Cooked? is a full-stack web application that uses AI to analyze user inputs about their life situation and provides humorous feedback on whether they\'re in trouble. Built with modern web technologies and featuring a responsive design with interactive elements.',
-      image: '/images/amICooked.png',
+      image: '/images/amicooked.png',
       github: 'https://github.com/Benguin25/am-i-cooked',
+      youtube: 'https://youtu.be/_i0HK6yL78I',
+      live: 'https://am-i-cooked-zeta.vercel.app/',
       technologies: ['React', 'TypeScript', 'Node.js', 'AI Integration', 'Full-Stack'],
       color: 'from-red-500 to-orange-600'
     },
@@ -118,6 +120,20 @@ export default function Projects() {
                           <Github size={20} />
                           View on GitHub
                         </motion.a>
+                        
+                        {project.live && (
+                          <motion.a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                          >
+                            <ExternalLink size={20} />
+                            Try Now
+                          </motion.a>
+                        )}
                         
                         {project.youtube && (
                           <motion.a
