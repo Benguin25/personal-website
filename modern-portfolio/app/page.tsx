@@ -153,13 +153,13 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex justify-center lg:justify-end"
             >
-              <div className="relative w-80 h-96 md:w-96 md:h-[480px]">
+              <div className="relative w-[400px] h-80 md:w-[460px] md:h-[360px]">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary-400/20 to-accent-400/20 p-1">
                   <div className="w-full h-full rounded-2xl bg-dark-900 p-2">
                     <img
-                      src="/images/profile.jpg"
+                      src="/images/goodImage.jpg"
                       alt="Benjamin Probert"
-                      className="w-full h-full rounded-xl object-cover"
+                      className="w-full h-full rounded-xl object-cover object-top scale-110"
                       loading="eager"
                     />
                   </div>

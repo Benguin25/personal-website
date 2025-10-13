@@ -7,28 +7,28 @@ import { Calendar, MapPin, Award, Users, BookOpen } from 'lucide-react'
 export default function Experience() {
   const workExperiences = [
     {
-      title: 'Software Developer',
+      title: 'Founder',
       company: 'Reservely',
       location: 'Remote',
       period: 'October 2024 – Present',
-      image: '/images/reservely.png',
+      image: '/images/reservely.jpg',
       responsibilities: [
-        'Developed full-stack restaurant reservation system using React, Node.js, and PostgreSQL',
+        'Founded and launched a restaurant reservation platform to streamline dining experiences',
+        'Developed full-stack restaurant reservation system using React and Vite',
         'Implemented real-time table booking features with dynamic availability tracking',
         'Built responsive user interface components with modern design principles',
-        'Collaborated on database design and API development for reservation management',
-        'Integrated payment processing and email notification systems'
+        'Created comprehensive business strategy and product roadmap for platform growth'
       ],
       color: 'from-purple-500 to-blue-500'
     },
     {
-      title: 'Coding Instructor',
+      title: 'Lead Coding Instructor',
       company: 'Code Ninjas',
       location: 'Markham, Ontario',
       period: 'September 2023 – June 2024',
-      image: '/images/codeNinjas.png',
+      image: '/images/codeninjas.png',
       responsibilities: [
-        'Taught programming fundamentals to children aged 7-14 using Scratch and JavaScript',
+        'Led programming instruction for children aged 7-14 using visual coding platforms',
         'Mentored students through game development projects and coding challenges',
         'Created engaging lesson plans that made complex programming concepts accessible',
         'Monitored student progress and provided personalized feedback to enhance learning',
@@ -81,6 +81,18 @@ export default function Experience() {
   ]
 
   const volunteerExperiences = [
+    {
+      title: 'VP Internal Affairs',
+      organization: 'School of Computer and Information Sciences (SOCIS)',
+      period: 'September 2024 – Present',
+      description: [
+        'Coordinate internal SOCIS operations and facilitate communication between executive members',
+        'Organize and manage executive meetings, ensuring productive discussions and decision-making',
+        'Maintain detailed records of meeting minutes, decisions, and action items for organizational transparency',
+        'Support event planning and execution for SOCIS activities and student engagement initiatives',
+        'Foster collaboration between different departments within the computer science community'
+      ]
+    },
     {
       title: 'Student Athletic Association Secretary',
       organization: 'Markham District High School',
