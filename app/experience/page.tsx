@@ -37,6 +37,21 @@ export default function Experience() {
       color: 'from-orange-500 to-red-500'
     },
     {
+      title: 'Brand Ambassador',
+      company: 'Riot Games',
+      location: 'Toronto, Ontario',
+      period: 'June 2025 – July 2025',
+      image: '/images/valorant.jpg',
+      responsibilities: [
+        'Represented Riot Games at VCT Masters Toronto 2025, engaging fans and promoting the Valorant brand',
+        'Collaborated with event staff to enhance engagement and uphold Riot\'s brand experience',
+        'Facilitated interactive fan experiences and promotional activities at the premier esports event',
+        'Maintained professional brand representation while connecting with the gaming community',
+        'Contributed to creating memorable experiences for attendees at one of the year\'s biggest Valorant tournaments'
+      ],
+      color: 'from-red-500 to-pink-500'
+    },
+    {
       title: 'Camp Counsellor',
       company: 'Camp Green Acres',
       location: 'Markham, Ontario',
@@ -50,6 +65,21 @@ export default function Experience() {
         'Offered comfort and support to children to help them overcome challenges'
       ],
       color: 'from-green-500 to-blue-500'
+    },
+    {
+      title: 'Sales Intern',
+      company: 'SharpStakes',
+      location: 'Remote',
+      period: 'April 2025 – Present',
+      image: '/images/sharpstakes.png',
+      responsibilities: [
+        'Promoted AI-driven sports betting analytics platform to prospective customers and sports betting enthusiasts',
+        'Generated leads and converted prospects into subscribers for SharpPicks, SharpAI, and SharpTrends products',
+        'Educated potential customers on the value of data-driven betting strategies and odds optimization',
+        'Collaborated with marketing team to develop customer acquisition strategies and promotional campaigns',
+        'Maintained customer relationships and provided ongoing support to maximize user retention and satisfaction'
+      ],
+      color: 'from-green-500 to-teal-500'
     },
     {
       title: 'Referee',
