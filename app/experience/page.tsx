@@ -67,6 +67,21 @@ export default function Experience() {
       color: 'from-green-500 to-blue-500'
     },
     {
+      title: 'Sales Intern',
+      company: 'SharpStakes',
+      location: 'Remote',
+      period: 'April 2025 – Present',
+      image: '/images/sharpstakes.png',
+      responsibilities: [
+        'Promoted AI-driven sports betting analytics platform to prospective customers and sports betting enthusiasts',
+        'Generated leads and converted prospects into subscribers for SharpPicks, SharpAI, and SharpTrends products',
+        'Educated potential customers on the value of data-driven betting strategies and odds optimization',
+        'Collaborated with marketing team to develop customer acquisition strategies and promotional campaigns',
+        'Maintained customer relationships and provided ongoing support to maximize user retention and satisfaction'
+      ],
+      color: 'from-green-500 to-teal-500'
+    },
+    {
       title: 'Referee',
       company: 'Ontario Minor Hockey Association',
       location: 'Markham, Ontario',
