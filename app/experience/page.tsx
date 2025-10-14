@@ -195,8 +195,8 @@ export default function Experience() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16">
-              My <span className="gradient-text">Experience</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16 gradient-text">
+              My Experience
             </h1>
           </motion.div>
 
@@ -208,7 +208,8 @@ export default function Experience() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Work Experience</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-accent-300">Work Experience</h2>
+
             
             <div className="space-y-16">
               {workExperiences.map((exp, index) => (
@@ -304,7 +305,7 @@ export default function Experience() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Volunteer Experience</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-accent-300">Volunteer Experience</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {volunteerExperiences.map((vol, index) => (

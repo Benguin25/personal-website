@@ -120,8 +120,8 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16">
-              About <span className="gradient-text">Me</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16 gradient-text">
+              About Me
             </h1>
           </motion.div>
 
