@@ -276,7 +276,9 @@ export default function Experience() {
                         <img
                           src={exp.image}
                           alt={exp.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                            exp.company === 'SharpStakes' ? 'object-fill' : 'object-cover'
+                          }`}
                           loading="lazy"
                         />
                         <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
