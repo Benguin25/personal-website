@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
         <ScrollProgress />
-        <div className="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+        <div className="min-h-screen">
           <Navbar />
           <main>{children}</main>
           <Footer />

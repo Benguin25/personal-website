@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Youtube } from 'lucide-react'
+import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function Projects() {
   const projects = [
@@ -49,6 +50,9 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen pt-16">
+      {/* Swirl Background */}
+      <SwirlBackground />
+      
       {/* Hero Section */}
       <section className="relative section-padding">
         <div className="max-w-7xl mx-auto">
@@ -58,8 +62,8 @@ export default function Projects() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16">
-              My <span className="gradient-text">Projects</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16 gradient-text">
+              My Projects
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Exploring technology through hands-on development

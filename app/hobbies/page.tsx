@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function Hobbies() {
   const mainHobbies = [
@@ -71,6 +72,9 @@ export default function Hobbies() {
 
   return (
     <div className="min-h-screen pt-16">
+      {/* Swirl Background */}
+      <SwirlBackground />
+      
       {/* Hero Section */}
       <section className="relative section-padding">
         <div className="max-w-7xl mx-auto">

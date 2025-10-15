@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function About() {
   const images = [
@@ -111,6 +112,9 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-16">
+      {/* Swirl Background */}
+      <SwirlBackground />
+      
       {/* Hero Section */}
       <section className="relative section-padding">
         <div className="max-w-7xl mx-auto">
@@ -120,8 +124,8 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16">
-              About <span className="gradient-text">Me</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16 gradient-text">
+              About Me
             </h1>
           </motion.div>
 
@@ -135,7 +139,7 @@ export default function About() {
           >
             <h2 className="text-4xl font-bold gradient-text mb-12">Introduction</h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-16">
-              Hi, I'm Benjamin Probert, a first year student from Markham, Ontario. 
+              Hi, I'm Benjamin Probert, a second year student from Markham, Ontario. 
               I am currently studying for my Bachelor of Computing degree, majoring in Computer Science Honours, 
               with a minor in Statistics at the University of Guelph. 
               I have a strong passion for Artificial Intelligence, Game Development, Embedded Systems (IoT), and Computer Vision.
