@@ -155,14 +155,19 @@ export default function Home() {
             >
               <div className="relative w-[400px] h-80 md:w-[460px] md:h-[360px]">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary-400/20 to-accent-400/20 p-1">
-                  <div className="w-full h-full rounded-2xl bg-dark-900 p-2">
+                    <div className="w-full h-full rounded-2xl bg-dark-900 p-2">
                     <img
-                      src="/images/goodImage.jpg"
+                      src="/images/goodImage4.jpg"
                       alt="Benjamin Probert"
-                      className="w-full h-full rounded-xl object-cover object-top scale-110"
+                      className="w-full h-full rounded-xl object-cover"
+                      style={{
+                        transform: 'scale(1.4)',
+                        transformOrigin: 'center center',
+                        objectPosition: '50% 20%'
+                      }}
                       loading="eager"
                     />
-                  </div>
+                    </div>
                 </div>
               </div>
             </motion.div>
