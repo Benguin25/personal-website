@@ -15,13 +15,13 @@ export default function Home() {
         {/* Swirl background replaces the gradient */}
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left side - Text content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-8 order-1"
             >
               <div>
                 <motion.h1
@@ -131,24 +131,14 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex justify-center lg:justify-end"
+              className="flex justify-center order-2 mt-8 lg:mt-0"
             >
-              <div className="relative w-[400px] h-80 md:w-[460px] md:h-[360px]">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary-400/20 to-accent-400/20 p-1">
-                    <div className="w-full h-full rounded-2xl bg-dark-900 p-2">
-                    <img
-                      src="/images/goodImage4.jpg"
-                      alt="Benjamin Probert"
-                      className="w-full h-full rounded-xl object-cover"
-                      style={{
-                        transform: 'scale(1.4)',
-                        transformOrigin: 'center center',
-                        objectPosition: '50% 20%'
-                      }}
-                      loading="eager"
-                    />
-                    </div>
-                </div>
+              <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                <img
+                  src="/images/goodImage4.jpg"
+                  alt="Benjamin Probert"
+                  className="w-full h-full rounded-2xl object-cover shadow-2xl"
+                />
               </div>
             </motion.div>
           </div>
