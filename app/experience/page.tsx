@@ -10,7 +10,7 @@ export default function Experience() {
     {
       title: 'Founder',
       company: 'Reservely',
-      location: 'Remote',
+      location: 'Hybrid',
       period: 'October 2024 – Present',
       image: '/images/reservely.jpg',
       responsibilities: [

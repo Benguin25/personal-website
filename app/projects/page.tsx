@@ -8,6 +8,28 @@ import SwirlBackground from '../../components/SwirlBackground.js'
 export default function Projects() {
   const projects = [
     {
+      title: 'NephroRx',
+      description: 'A comprehensive medication dosing calculator for patients with chronic kidney disease.',
+      longDescription: 'NephroRx is a full-stack web application that helps healthcare providers calculate accurate medication dosages for chronic kidney disease patients based on their kidney function. Features automated PDF processing using OCR and NLP, real-time dosing calculations with eGFR assessments, and a modern responsive interface built with React and Tailwind CSS.',
+      image: '/images/nephrorx.png',
+      github: 'https://github.com/NephroRx/NephroRx',
+      youtube: 'https://youtu.be/Yyc4ZI_9fSk',
+      live: 'https://nephrorx.app/',
+      technologies: ['React', 'Python', 'Flask', 'Tailwind CSS', 'OCR', 'NLP', 'Healthcare'],
+      color: 'from-blue-500 to-cyan-600'
+    },
+    {
+      title: 'Codle',
+      description: 'Test your coding knowledge with daily programming challenges inspired by Wordle!',
+      longDescription: 'Codle is an interactive web application that challenges users with daily coding questions across various programming languages. Built with React and Firebase, it features user authentication, real-time leaderboards, daily question generation using AI, and a clean, engaging user interface. Perfect for developers looking to sharpen their skills!',
+      image: '/images/codle.png',
+      github: 'https://github.com/CodleDev/Codle',
+      live: 'https://codle.pages.dev/',
+      technologies: ['React', 'Firebase', 'Node.js', 'AI Integration', 'Authentication'],
+      color: 'from-purple-500 to-indigo-600',
+      objectFit: 'contain'
+    },
+    {
       title: 'Am I Cooked?',
       description: 'A witty web application that analyzes your life choices and tells you if you\'re "cooked"!',
       longDescription: 'Am I Cooked? is a full-stack web application that uses AI to analyze user inputs about their life situation and provides humorous feedback on whether they\'re in trouble. Built with modern web technologies and featuring a responsive design with interactive elements.',
@@ -164,7 +186,7 @@ export default function Projects() {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className={`w-full h-full ${project.objectFit === 'contain' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-dark-900/30 to-transparent"></div>
