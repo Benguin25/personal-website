@@ -133,12 +133,12 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex justify-center order-2 mt-8 lg:mt-0"
             >
-              <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
-                <img
-                  src="/images/goodImage4.jpg"
-                  alt="Benjamin Probert"
-                  className="w-full h-full rounded-2xl object-cover shadow-2xl"
-                />
+              <div className="w-64 h-auto sm:w-72 sm:h-auto md:w-80 md:h-auto lg:w-96 lg:h-auto">
+              <img
+                src="/images/goodImage6.jpg"
+                alt="Benjamin Probert"
+                className="w-full h-auto rounded-2xl object-contain shadow-2xl"
+              />
               </div>
             </motion.div>
           </div>
