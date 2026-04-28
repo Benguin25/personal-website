@@ -66,7 +66,7 @@ const Navbar = () => {
                   href={item.href}
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? 'text-white'
+                      ? 'text-indigo-300'
                       : 'text-gray-400 hover:text-white hover:bg-white/[0.06]'
                   }`}
                 >

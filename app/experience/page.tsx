@@ -199,10 +199,11 @@ export default function Experience() {
             transition={{ duration: 0.7 }}
             className="text-center mb-20 mt-10"
           >
+            <span className="section-label">Background</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               My Experience
             </h1>
-            <p className="text-base text-zinc-500 mt-4 max-w-xl mx-auto">
+            <p className="text-base text-zinc-600 mt-4 max-w-xl mx-auto">
               Work, volunteer roles, and recognition that shaped who I am.
             </p>
           </motion.div>

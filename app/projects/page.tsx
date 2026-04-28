@@ -103,10 +103,11 @@ export default function Projects() {
             transition={{ duration: 0.7 }}
             className="text-center mb-20 mt-10"
           >
+            <span className="section-label">Portfolio</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               My Projects
             </h1>
-            <p className="text-base text-gray-500 mt-6 max-w-xl mx-auto">
+            <p className="text-base text-zinc-600 mt-4 max-w-xl mx-auto">
               A collection of things I've built, from hackathon prototypes to production apps.
             </p>
           </motion.div>
@@ -166,7 +167,7 @@ export default function Projects() {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="flex items-center gap-2 bg-white text-black hover:bg-zinc-100 px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
+                            className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
                           >
                             <ExternalLink size={16} />
                             Live Demo

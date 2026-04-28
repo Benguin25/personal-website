@@ -124,10 +124,11 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="text-center mb-20 mt-10"
           >
+            <span className="section-label">Who I am</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               About Me
             </h1>
-            <p className="text-base text-zinc-500 mt-4 max-w-xl mx-auto">
+            <p className="text-base text-zinc-600 mt-4 max-w-xl mx-auto">
               CS student, athlete, and builder. Here's a bit of who I am.
             </p>
           </motion.div>
