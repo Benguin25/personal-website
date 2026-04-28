@@ -107,7 +107,7 @@ export default function Projects() {
               My Projects
             </h1>
             <p className="text-base text-gray-500 mt-6 max-w-xl mx-auto">
-              A collection of things I've built — from hackathon prototypes to production apps.
+              A collection of things I've built, from hackathon prototypes to production apps.
             </p>
           </motion.div>
 

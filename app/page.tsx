@@ -45,7 +45,7 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            {/* Left — Text */}
+            {/* Left - Text */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -94,7 +94,7 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="text-base text-zinc-400 leading-relaxed max-w-lg"
               >
-                Passionate about building things that matter — from AI-powered apps to full-stack
+                Passionate about building things that matter, from AI-powered apps to full-stack
                 platforms. Currently exploring the intersection of software, machine learning, and
                 real-world impact.
               </motion.p>
@@ -167,7 +167,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right — Profile image */}
+            {/* Right - Profile image */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}

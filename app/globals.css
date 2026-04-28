@@ -76,7 +76,7 @@ body {
   animation: ping-slow 2s ease-in-out infinite;
 }
 
-/* Tag / badge pill — neutral */
+/* Tag / badge pill - neutral */
 .tech-tag {
   display: inline-flex;
   align-items: center;

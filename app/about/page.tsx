@@ -128,7 +128,7 @@ export default function About() {
               About Me
             </h1>
             <p className="text-base text-zinc-500 mt-4 max-w-xl mx-auto">
-              CS student, athlete, and builder — here's a bit of who I am.
+              CS student, athlete, and builder. Here's a bit of who I am.
             </p>
           </motion.div>
 
