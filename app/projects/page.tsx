@@ -103,7 +103,7 @@ export default function Projects() {
             transition={{ duration: 0.7 }}
             className="text-center mb-20 mt-10"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text section-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               My Projects
             </h1>
             <p className="text-base text-gray-500 mt-6 max-w-xl mx-auto">
@@ -120,11 +120,8 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true, margin: '-60px' }}
-                className="relative glass-effect rounded-2xl overflow-hidden group hover:shadow-2xl hover:shadow-primary-500/10 hover:border-white/[0.12] transition-all duration-400"
+                className="relative glass-effect rounded-2xl overflow-hidden group hover:border-white/[0.14] hover:shadow-xl hover:shadow-black/40 transition-all duration-300"
               >
-                {/* Top accent stripe */}
-                <div className={`h-[3px] bg-gradient-to-r ${project.color}`} />
-
                 <div className="p-7 md:p-9">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     {/* Info side */}
@@ -133,10 +130,10 @@ export default function Projects() {
                         <h3 className="text-2xl font-bold text-white mb-1.5">
                           {project.title}
                         </h3>
-                        <p className="text-sm text-primary-300 font-medium mb-3">
+                        <p className="text-sm text-zinc-400 font-medium mb-3">
                           {project.description}
                         </p>
-                        <p className="text-gray-400 leading-relaxed text-sm">
+                        <p className="text-zinc-500 leading-relaxed text-sm">
                           {project.longDescription}
                         </p>
                       </div>
@@ -154,9 +151,9 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ scale: 1.03 }}
-                          whileTap={{ scale: 0.97 }}
-                          className="flex items-center gap-2 glass-effect border border-white/[0.12] hover:bg-white/[0.08] text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="flex items-center gap-2 glass-effect border border-white/[0.1] hover:bg-white/[0.08] text-zinc-300 hover:text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
                         >
                           <Github size={16} />
                           GitHub
@@ -167,9 +164,9 @@ export default function Projects() {
                             href={project.live}
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="flex items-center gap-2 bg-emerald-600/80 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="flex items-center gap-2 bg-white text-black hover:bg-zinc-100 px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
                           >
                             <ExternalLink size={16} />
                             Live Demo
@@ -181,9 +178,9 @@ export default function Projects() {
                             href={project.youtube}
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="flex items-center gap-2 bg-red-600/80 hover:bg-red-600 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="flex items-center gap-2 glass-effect border border-white/[0.1] hover:bg-white/[0.08] text-zinc-300 hover:text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
                           >
                             <Youtube size={16} />
                             YouTube

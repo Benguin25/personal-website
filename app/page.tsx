@@ -41,27 +41,6 @@ export default function Home() {
     <div className="min-h-screen pt-16">
       <SwirlBackground />
 
-      {/* Ambient background blobs */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div
-          className="blob w-[600px] h-[600px] opacity-[0.12]"
-          style={{
-            background: 'radial-gradient(circle, #6366f1 0%, transparent 70%)',
-            top: '-10%',
-            left: '-10%',
-          }}
-        />
-        <div
-          className="blob w-[500px] h-[500px] opacity-[0.08]"
-          style={{
-            background: 'radial-gradient(circle, #ec4899 0%, transparent 70%)',
-            bottom: '10%',
-            right: '-5%',
-          }}
-        />
-      </div>
-
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -78,7 +57,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] text-sm text-gray-300 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.08] text-sm text-zinc-400"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="ping-slow absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -95,15 +74,14 @@ export default function Home() {
                   transition={{ duration: 0.7, delay: 0.2 }}
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
                 >
-                  Hi, I'm{' '}
-                  <span className="gradient-text">Benjamin Probert</span>
+                  Hi, I'm Benjamin Probert
                 </motion.h1>
 
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
-                  className="text-lg md:text-xl text-gray-400 font-medium"
+                  className="text-lg md:text-xl text-zinc-500 font-medium"
                 >
                   CS Student @ University of Guelph &middot; Statistics Minor
                 </motion.h2>
@@ -114,7 +92,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="text-base text-gray-400 leading-relaxed max-w-lg"
+                className="text-base text-zinc-400 leading-relaxed max-w-lg"
               >
                 Passionate about building things that matter — from AI-powered apps to full-stack
                 platforms. Currently exploring the intersection of software, machine learning, and
@@ -142,9 +120,9 @@ export default function Home() {
               >
                 <motion.a
                   href="/projects"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-6 py-3 rounded-xl font-semibold text-sm shadow-lg hover:shadow-primary-500/30 transition-shadow duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-semibold text-sm hover:bg-zinc-100 transition-colors duration-200"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -156,9 +134,9 @@ export default function Home() {
                   href="/Benjamin_Probert_Technical_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center gap-2 glass-effect text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-white/[0.08] transition-colors duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center gap-2 glass-effect text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-white/[0.08] transition-colors duration-200"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -181,7 +159,7 @@ export default function Home() {
                     target={link.href.startsWith('mailto') ? undefined : '_blank'}
                     rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
                     aria-label={link.label}
-                    className="p-2.5 rounded-xl text-gray-500 hover:text-white hover:bg-white/[0.08] transition-all duration-200"
+                    className="p-2.5 rounded-xl text-zinc-600 hover:text-zinc-200 hover:bg-white/[0.06] transition-all duration-200"
                   >
                     {link.icon}
                   </a>
@@ -196,36 +174,12 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
               className="flex justify-center order-2"
             >
-              <div className="relative">
-                {/* Decorative ring */}
-                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 blur-xl" />
-                <div className="relative w-64 sm:w-72 md:w-80 lg:w-96">
-                  <img
-                    src="/images/goodImage6.jpg"
-                    alt="Benjamin Probert"
-                    className="w-full h-auto rounded-2xl object-contain shadow-2xl profile-glow"
-                  />
-                  {/* Floating stat card */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.9 }}
-                    className="absolute -bottom-4 -left-4 glass-effect rounded-xl px-4 py-3 shadow-xl"
-                  >
-                    <div className="text-2xl font-bold gradient-text">93.4%</div>
-                    <div className="text-xs text-gray-400">Current GPA</div>
-                  </motion.div>
-                  {/* Floating badge */}
-                  <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.0 }}
-                    className="absolute -top-4 -right-4 glass-effect rounded-xl px-4 py-3 shadow-xl"
-                  >
-                    <div className="text-2xl font-bold gradient-text">8+</div>
-                    <div className="text-xs text-gray-400">Projects Built</div>
-                  </motion.div>
-                </div>
+              <div className="w-64 sm:w-72 md:w-80 lg:w-96">
+                <img
+                  src="/images/goodImage6.jpg"
+                  alt="Benjamin Probert"
+                  className="w-full h-auto rounded-2xl object-contain shadow-2xl"
+                />
               </div>
             </motion.div>
           </div>
@@ -235,7 +189,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-600"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-zinc-700"
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>
             <motion.div

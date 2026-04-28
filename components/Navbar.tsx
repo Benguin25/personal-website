@@ -45,10 +45,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-2">
-            <span className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-xs font-bold text-white shadow-md">
+            <span className="w-7 h-7 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center text-xs font-bold text-white">
               BP
             </span>
-            <span className="text-white font-semibold text-sm tracking-wide group-hover:text-primary-300 transition-colors duration-200">
+            <span className="text-white font-semibold text-sm tracking-wide group-hover:text-zinc-300 transition-colors duration-200">
               Benjamin Probert
             </span>
           </Link>
@@ -89,9 +89,9 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: navItems.length * 0.08 }}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-md hover:shadow-primary-500/30 transition-shadow duration-200"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-white text-black hover:bg-zinc-100 transition-colors duration-200"
             >
               Resume
             </motion.a>
@@ -139,7 +139,7 @@ const Navbar = () => {
                 href="/Benjamin_Probert_Technical_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block mt-2 px-4 py-2.5 rounded-lg text-sm font-medium text-center bg-gradient-to-r from-primary-500 to-accent-500 text-white"
+                className="block mt-2 px-4 py-2.5 rounded-lg text-sm font-medium text-center bg-white text-black"
               >
                 Resume
               </a>
