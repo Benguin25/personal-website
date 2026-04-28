@@ -8,6 +8,16 @@ import SwirlBackground from '../../components/SwirlBackground.js'
 export default function Projects() {
   const projects = [
     {
+      title: 'MyRoommate',
+      description: 'Find your perfect roommate match with MyRoommate!',
+      longDescription: 'MyRoommate is a roommate-finding platform that connects people looking for compatible living arrangements. Users can create profiles, set preferences, and browse potential roommates to find the ideal match for their lifestyle and budget.',
+      image: '/images/myroommate.png',
+      github: 'https://github.com/Benguin25/MyRoommate',
+      live: 'https://myroommate.net/',
+      technologies: ['React', 'Node.js', 'Full-Stack', 'Web App'],
+      color: 'from-teal-500 to-green-600'
+    },
+    {
       title: 'NephroRx',
       description: 'A comprehensive medication dosing calculator for patients with chronic kidney disease.',
       longDescription: 'NephroRx is a full-stack web application that helps healthcare providers calculate accurate medication dosages for chronic kidney disease patients based on their kidney function. Features automated PDF processing using OCR and NLP, real-time dosing calculations with eGFR assessments, and a modern responsive interface built with React and Tailwind CSS.',
@@ -67,6 +77,16 @@ export default function Projects() {
       github: 'https://github.com/Benguin25/drone-photography',
       technologies: ['Photography', 'HTML', 'CSS', 'Web Design'],
       color: 'from-purple-500 to-pink-600'
+    },
+    {
+      title: 'ClearSite',
+      description: 'Streamline property management with intelligent asset tracking and maintenance scheduling!',
+      longDescription: 'ClearSite is a property management platform that brings intelligent asset tracking, maintenance scheduling, and comprehensive documentation together in one place. Designed to simplify the complexities of managing properties so you can focus on what matters.',
+      image: '/images/clearsite.png',
+      github: 'https://github.com/Benguin25/ClearSite',
+      live: 'https://clear-site-coral.vercel.app/',
+      technologies: ['React', 'TypeScript', 'Vercel', 'Web App'],
+      color: 'from-sky-500 to-blue-600'
     }
   ]
 
