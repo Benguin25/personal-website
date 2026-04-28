@@ -67,6 +67,26 @@ export default function Projects() {
       github: 'https://github.com/Benguin25/drone-photography',
       technologies: ['Photography', 'HTML', 'CSS', 'Web Design'],
       color: 'from-purple-500 to-pink-600'
+    },
+    {
+      title: 'MyRoommate',
+      description: 'Find your perfect roommate match with MyRoommate!',
+      longDescription: 'MyRoommate is a roommate-finding platform that connects people looking for compatible living arrangements. Users can create profiles, set preferences, and browse potential roommates to find the ideal match for their lifestyle and budget.',
+      image: '/images/myroommate.png',
+      github: 'https://github.com/Benguin25/MyRoommate',
+      live: 'https://myroommate.net/',
+      technologies: ['React', 'Node.js', 'Full-Stack', 'Web App'],
+      color: 'from-teal-500 to-green-600'
+    },
+    {
+      title: 'ClearSite',
+      description: 'Declutter and organize your browsing experience with ClearSite!',
+      longDescription: 'ClearSite is a web application designed to help users manage and clear unwanted site data, cookies, and browsing clutter. It provides a clean, intuitive interface to take control of your online footprint.',
+      image: '/images/clearsite.png',
+      github: 'https://github.com/Benguin25/ClearSite',
+      live: 'https://clear-site-coral.vercel.app/',
+      technologies: ['React', 'TypeScript', 'Vercel', 'Web App'],
+      color: 'from-sky-500 to-blue-600'
     }
   ]
 
