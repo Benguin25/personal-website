@@ -80,8 +80,8 @@ export default function Projects() {
     },
     {
       title: 'ClearSite',
-      description: 'Declutter and organize your browsing experience with ClearSite!',
-      longDescription: 'ClearSite is a web application designed to help users manage and clear unwanted site data, cookies, and browsing clutter. It provides a clean, intuitive interface to take control of your online footprint.',
+      description: 'Streamline property management with intelligent asset tracking and maintenance scheduling!',
+      longDescription: 'ClearSite is a property management platform that brings intelligent asset tracking, maintenance scheduling, and comprehensive documentation together in one place. Designed to simplify the complexities of managing properties so you can focus on what matters.',
       image: '/images/clearsite.png',
       github: 'https://github.com/Benguin25/ClearSite',
       live: 'https://clear-site-coral.vercel.app/',
