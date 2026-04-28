@@ -121,12 +121,15 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 0.7 }}
+            className="text-center mb-20 mt-10"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16 gradient-text">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text section-heading">
               About Me
             </h1>
+            <p className="text-base text-gray-500 mt-6 max-w-xl mx-auto">
+              CS student, athlete, and builder — here's a bit of who I am.
+            </p>
           </motion.div>
 
           {/* Introduction */}

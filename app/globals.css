@@ -19,26 +19,151 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6366f1;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #6366f1, #ec4899);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b9dff;
+  background: linear-gradient(180deg, #8b9dff, #f472b6);
 }
 
-/* Simplified gradient text */
+/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #6366f1, #8b9dff, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Glass morphism card */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Card hover interaction */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Section padding */
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Subtle noise texture overlay on cards */
+.glass-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* Glow ring for profile image */
+.profile-glow {
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.3),
+    0 0 40px rgba(99, 102, 241, 0.15),
+    0 0 80px rgba(236, 72, 153, 0.08);
+}
+
+/* Ambient background blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Animated gradient border */
+@keyframes border-spin {
+  to { --angle: 360deg; }
+}
+
+/* Fade up animation for staggered entrance */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse dot for "available" badge */
+@keyframes ping-slow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.ping-slow {
+  animation: ping-slow 2s ease-in-out infinite;
+}
+
+/* Section heading accent underline */
+.section-heading {
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  border-radius: 2px;
+}
+
+/* Tag / badge pill */
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: rgba(99, 102, 241, 0.12);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.tech-tag:hover {
+  background: rgba(99, 102, 241, 0.22);
+  border-color: rgba(99, 102, 241, 0.4);
 }
