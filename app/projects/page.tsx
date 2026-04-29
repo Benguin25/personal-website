@@ -170,7 +170,7 @@ export default function Projects() {
                             className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
                           >
                             <ExternalLink size={16} />
-                            Live Demo
+                            Launch
                           </motion.a>
                         )}
 
@@ -183,7 +183,7 @@ export default function Projects() {
                             whileTap={{ scale: 0.98 }}
                             className="flex items-center gap-2 glass-effect border border-white/[0.1] hover:bg-white/[0.08] text-zinc-300 hover:text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
                           >
-                            <Youtube size={16} />
+                            <Youtube size={16} className="text-red-500" />
                             YouTube
                           </motion.a>
                         )}
