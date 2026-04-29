@@ -29,6 +29,16 @@ export default function Projects() {
       color: 'from-blue-500 to-cyan-600'
     },
     {
+      title: 'ClearSite',
+      description: 'Streamline property management with intelligent asset tracking and maintenance scheduling!',
+      longDescription: 'ClearSite is a property management platform that brings intelligent asset tracking, maintenance scheduling, and comprehensive documentation together in one place. Designed to simplify the complexities of managing properties so you can focus on what matters.',
+      image: '/images/clearsite.png',
+      github: 'https://github.com/Benguin25/ClearSite',
+      live: 'https://clear-site-coral.vercel.app/',
+      technologies: ['React', 'TypeScript', 'Vercel', 'Web App'],
+      color: 'from-sky-500 to-blue-600'
+    },
+    {
       title: 'Codle',
       description: 'Test your coding knowledge with daily programming challenges inspired by Wordle!',
       longDescription: 'Codle is an interactive web application that challenges users with daily coding questions across various programming languages. Built with React and Firebase, it features user authentication, real-time leaderboards, daily question generation using AI, and a clean, engaging user interface. Perfect for developers looking to sharpen their skills!',
@@ -77,16 +87,6 @@ export default function Projects() {
       github: 'https://github.com/Benguin25/drone-photography',
       technologies: ['Photography', 'HTML', 'CSS', 'Web Design'],
       color: 'from-purple-500 to-pink-600'
-    },
-    {
-      title: 'ClearSite',
-      description: 'Streamline property management with intelligent asset tracking and maintenance scheduling!',
-      longDescription: 'ClearSite is a property management platform that brings intelligent asset tracking, maintenance scheduling, and comprehensive documentation together in one place. Designed to simplify the complexities of managing properties so you can focus on what matters.',
-      image: '/images/clearsite.png',
-      github: 'https://github.com/Benguin25/ClearSite',
-      live: 'https://clear-site-coral.vercel.app/',
-      technologies: ['React', 'TypeScript', 'Vercel', 'Web App'],
-      color: 'from-sky-500 to-blue-600'
     }
   ]
 
