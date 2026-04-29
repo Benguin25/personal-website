@@ -196,12 +196,16 @@ export default function Experience() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 0.7 }}
+            className="text-center mb-20 mt-10"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16 gradient-text">
+            <span className="section-label">Background</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               My Experience
             </h1>
+            <p className="text-base text-zinc-600 mt-4 max-w-xl mx-auto">
+              Work, volunteer roles, and recognition that shaped who I am.
+            </p>
           </motion.div>
 
           {/* Work Experience Section */}
@@ -212,80 +216,65 @@ export default function Experience() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold mb-12 text-center text-accent-300">Work Experience</h2>
+            <h2 className="text-2xl font-semibold mb-10 text-white">Work Experience</h2>
 
             
-            <div className="space-y-16">
+            <div className="space-y-10">
               {workExperiences.map((exp, index) => (
                 <motion.div
                   key={exp.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="glass-effect rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-primary-500/20 transition-all duration-500"
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  className="relative glass-effect rounded-2xl overflow-hidden group hover:border-white/[0.14] hover:shadow-xl hover:shadow-black/40 transition-all duration-300"
                 >
-                  <div className={`h-2 bg-gradient-to-r ${exp.color}`}></div>
-                  
-                  <div className="p-8">
+                  <div className="p-7 md:p-9">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                       {/* Experience Info */}
-                      <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                      <div className={`space-y-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                         <div>
-                          <h3 className="text-3xl font-bold text-white mb-2">
+                          <h3 className="text-2xl font-bold text-white mb-1">
                             {exp.title}
                           </h3>
-                          <div className="flex items-center gap-4 text-primary-300 mb-4">
+                          <p className="text-zinc-300 font-medium mb-3">{exp.company}</p>
+                          <div className="flex flex-wrap items-center gap-3 text-zinc-600 text-sm">
                             <div className="flex items-center gap-1">
-                              <Calendar size={16} />
-                              <span className="text-sm font-medium">{exp.period}</span>
+                              <Calendar size={13} />
+                              <span>{exp.period}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <MapPin size={16} />
-                              <span className="text-sm font-medium">{exp.location}</span>
+                              <MapPin size={13} />
+                              <span>{exp.location}</span>
                             </div>
                           </div>
-                          <p className="text-xl text-accent-300 mb-6 font-semibold">
-                            {exp.company}
-                          </p>
                         </div>
 
-                        {/* Responsibilities */}
-                        <div>
-                          <h4 className="text-lg font-semibold text-white mb-4">Key Responsibilities:</h4>
-                          <ul className="space-y-3">
-                            {exp.responsibilities.map((resp, i) => (
-                              <motion.li
-                                key={i}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: i * 0.1 }}
-                                viewport={{ once: true }}
-                                className="flex items-start gap-3 text-gray-300"
-                              >
-                                <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 flex-shrink-0"></div>
-                                <span>{resp}</span>
-                              </motion.li>
-                            ))}
-                          </ul>
-                        </div>
+                        <ul className="space-y-2.5">
+                          {exp.responsibilities.map((resp, i) => (
+                            <li key={i} className="flex items-start gap-3 text-zinc-500 text-sm leading-relaxed">
+                              <div className="w-1 h-1 bg-zinc-600 rounded-full mt-2 flex-shrink-0" />
+                              <span>{resp}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
 
                       {/* Experience Image */}
                       <motion.div
-                        whileHover={{ scale: 1.02 }}
+                        whileHover={{ scale: 1.01 }}
                         transition={{ duration: 0.3 }}
-                        className={`relative h-64 lg:h-80 overflow-hidden rounded-2xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
+                        className={`relative h-56 lg:h-72 overflow-hidden rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                       >
                         <img
                           src={exp.image}
                           alt={exp.title}
-                          className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                          className={`w-full h-full transition-transform duration-500 group-hover:scale-[1.03] ${
                             exp.company === 'SharpStakes' ? 'object-fill' : 'object-cover'
                           }`}
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                       </motion.div>
                     </div>
                   </div>
@@ -300,7 +289,7 @@ export default function Experience() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="w-full h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent mb-20"
+            className="w-full h-px bg-white/[0.06] mb-20"
           ></motion.div>
 
           {/* Volunteer Experience Section */}
@@ -311,25 +300,25 @@ export default function Experience() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold mb-12 text-center text-accent-300">Volunteer Experience</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <h2 className="text-2xl font-semibold mb-10 text-white">Volunteer Experience</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {volunteerExperiences.map((vol, index) => (
                 <motion.div
                   key={vol.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="glass-effect p-8 rounded-2xl card-hover"
+                  className="glass-effect p-6 rounded-2xl card-hover"
                 >
-                  <h3 className="text-xl font-bold text-white mb-3">{vol.title}</h3>
-                  <div className="text-primary-300 font-semibold mb-2">{vol.organization}</div>
-                  <div className="text-accent-300 text-sm mb-6">{vol.period}</div>
+                  <h3 className="text-base font-semibold text-white mb-2">{vol.title}</h3>
+                  <div className="text-zinc-400 text-sm font-medium mb-1">{vol.organization}</div>
+                  <div className="text-zinc-600 text-xs mb-5">{vol.period}</div>
                   <ul className="space-y-2">
                     {vol.description.map((desc, i) => (
-                      <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <li key={i} className="text-zinc-500 text-sm flex items-start gap-2">
+                        <div className="w-1 h-1 bg-zinc-600 rounded-full mt-2 flex-shrink-0" />
                         <span>{desc}</span>
                       </li>
                     ))}
@@ -345,7 +334,7 @@ export default function Experience() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="w-full h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent mb-20"
+            className="w-full h-px bg-white/[0.06] mb-20"
           ></motion.div>
 
           {/* Awards Section */}
@@ -355,25 +344,25 @@ export default function Experience() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Awards & Recognition</h2>
-            
+            <h2 className="text-2xl font-semibold mb-10 text-white">Awards &amp; Recognition</h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {awards.map((award, index) => (
                 <motion.div
                   key={award.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
                   viewport={{ once: true }}
-                  className="glass-effect p-6 rounded-2xl text-center card-hover"
+                  className="glass-effect p-6 rounded-2xl card-hover"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full flex items-center justify-center">
-                    <award.icon className="w-8 h-8 text-white" />
+                  <div className="w-10 h-10 mb-4 bg-white/[0.06] border border-white/[0.08] rounded-xl flex items-center justify-center">
+                    <award.icon className="w-5 h-5 text-zinc-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{award.title}</h3>
-                  <div className="text-primary-300 text-sm font-semibold mb-2">{award.organization}</div>
-                  <div className="text-accent-300 text-sm mb-4">{award.period}</div>
-                  <p className="text-gray-300 text-sm leading-relaxed">{award.description}</p>
+                  <h3 className="text-base font-semibold text-white mb-1">{award.title}</h3>
+                  <div className="text-zinc-400 text-sm mb-1">{award.organization}</div>
+                  <div className="text-zinc-600 text-xs mb-3">{award.period}</div>
+                  <p className="text-zinc-500 text-sm leading-relaxed">{award.description}</p>
                 </motion.div>
               ))}
             </div>

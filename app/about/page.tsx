@@ -121,12 +121,16 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 0.7 }}
+            className="text-center mb-20 mt-10"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16 gradient-text">
+            <span className="section-label">Who I am</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               About Me
             </h1>
+            <p className="text-base text-zinc-600 mt-4 max-w-xl mx-auto">
+              CS student, athlete, and builder. Here's a bit of who I am.
+            </p>
           </motion.div>
 
           {/* Introduction */}
@@ -137,8 +141,8 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold gradient-text mb-12">Introduction</h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-16">
+            <h2 className="text-2xl font-semibold text-white mb-8">Introduction</h2>
+            <p className="text-base text-zinc-400 max-w-3xl mx-auto leading-relaxed mb-14">
               Hi, I'm Benjamin Probert, a second year student from Markham, Ontario. 
               I am currently studying for my Bachelor of Computing degree, majoring in Computer Science Honours, 
               with a minor in Statistics at the University of Guelph. 
@@ -154,8 +158,8 @@ export default function About() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold gradient-text mb-4">93.4%</div>
-                <div className="text-gray-400 text-lg">Current GPA</div>
+                <div className="text-5xl font-bold text-white mb-2">93.4%</div>
+                <div className="text-zinc-500 text-sm">Current GPA</div>
               </motion.div>
               
               <motion.div
@@ -165,8 +169,8 @@ export default function About() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold gradient-text mb-4">Dean's List</div>
-                <div className="text-gray-400 text-lg">Academic Recognition</div>
+                <div className="text-5xl font-bold text-white mb-2">Dean's List</div>
+                <div className="text-zinc-500 text-sm">Academic Recognition</div>
               </motion.div>
               
               <motion.div
@@ -176,8 +180,8 @@ export default function About() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-6xl font-bold gradient-text mb-4">4+</div>
-                <div className="text-gray-400 text-lg">Years Honor Roll</div>
+                <div className="text-5xl font-bold text-white mb-2">4+</div>
+                <div className="text-zinc-500 text-sm">Years Honor Roll</div>
               </motion.div>
             </div>
           </motion.div>
@@ -225,8 +229,8 @@ export default function About() {
               viewport={{ once: true }}
               className="glass-effect p-8 rounded-2xl"
             >
-              <h3 className="text-3xl font-bold gradient-text mb-6">Why Computer Science?</h3>
-              <p className="text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-semibold text-white mb-4">Why Computer Science?</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm">
                 I have always been interested in Computer Science. Growing up with computers, I have always been fascinated to learn about new technologies
                 and innovations, specifically coding. Ever since I began coding on Scratch in elementary school, I have always had a passion
                 for it, and knew that I would end up in this field. Its blend of logical reasoning, creativity, and practical application makes it 
@@ -241,8 +245,8 @@ export default function About() {
               viewport={{ once: true }}
               className="glass-effect p-8 rounded-2xl"
             >
-              <h3 className="text-3xl font-bold gradient-text mb-6">Why University of Guelph?</h3>
-              <p className="text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-semibold text-white mb-4">Why University of Guelph?</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm">
                 The day that I took a tour to the University of Guelph was the day I fell in love with the campus.
                 Additionally, my brother, who is two years older than me, also attends the University of Guelph for Computer Science. Maybe it runs in the family!
                 Finally, the opportunity to work alongside inspiring professors and peers in a supportive environment will help me grow 
@@ -259,7 +263,7 @@ export default function About() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Tech Stack</h2>
+            <h2 className="text-2xl font-semibold text-white mb-8 text-center">Tech Stack</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {techSkills.map((skill, index) => (
                 <motion.div
@@ -288,27 +292,23 @@ export default function About() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Areas of Interest</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-2xl font-semibold text-white mb-8 text-center">Areas of Interest</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {interests.map((interest, index) => (
                 <motion.div
                   key={interest.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                  className="glass-effect rounded-2xl overflow-hidden group cursor-pointer"
+                  className="glass-effect rounded-2xl p-7 card-hover"
                 >
-                  <div className={`h-2 bg-gradient-to-r ${interest.color}`}></div>
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      {interest.title}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed">
-                      {interest.description}
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {interest.title}
+                  </h3>
+                  <p className="text-zinc-500 leading-relaxed text-sm">
+                    {interest.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -323,9 +323,9 @@ export default function About() {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"
           >
             <div className="order-2 lg:order-1">
-              <h3 className="text-4xl font-bold gradient-text mb-6">Academic Goals</h3>
-              <div className="glass-effect p-8 rounded-2xl">
-                <p className="text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-semibold text-white mb-4">Academic Goals</h3>
+              <div className="glass-effect p-7 rounded-2xl">
+                <p className="text-zinc-400 leading-relaxed text-sm">
                   I am driven by a passion for academic excellence and personal growth. Academically, I prioritize my grades over
                   anything else. I am on the Dean's Honour's List for my first semester at UOFG. I have been honour roll at my high school
                   all four years that I attended. My GPA for my first semester was a 93.4%, and I plan to keep it similar for my following semesters.
@@ -346,7 +346,6 @@ export default function About() {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
             </motion.div>
           </motion.div>
 
@@ -371,12 +370,11 @@ export default function About() {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 border-4 border-accent-400/30 rounded-2xl"></div>
             </motion.div>
             <div>
-              <h3 className="text-4xl font-bold gradient-text mb-6">Personal Goals</h3>
-              <div className="glass-effect p-8 rounded-2xl">
-                <p className="text-gray-300 leading-relaxed">
+              <h3 className="text-xl font-semibold text-white mb-4">Personal Goals</h3>
+              <div className="glass-effect p-7 rounded-2xl">
+                <p className="text-zinc-400 leading-relaxed text-sm">
                   As for personal goals, there are many things I strive to accomplish in my life. A major goal of mine is to travel the world, 
                   immersing myself in different cultures, admiring the beauty of our planet, and broadening my perspective on the world.
                   An equally important goal is my desire to build a loving, close-knit family. Finally, on a more physical note, I have the drive
@@ -392,7 +390,7 @@ export default function About() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="w-full h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent mb-20"
+            className="w-full h-px bg-white/[0.06] mb-20"
           ></motion.div>
 
           {/* Hobbies Section */}
@@ -403,46 +401,40 @@ export default function About() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-4xl font-bold gradient-text mb-12 text-center">My Hobbies & Sports</h2>
-            
-            {/* Main Hobbies - Hockey and Baseball */}
-            <div className="space-y-16 mb-20">
+            <h2 className="text-2xl font-semibold text-white mb-10 text-center">My Hobbies &amp; Sports</h2>
+
+            {/* Main Hobbies */}
+            <div className="space-y-10 mb-16">
               {mainHobbies.map((hobby, index) => (
                 <motion.div
                   key={hobby.title}
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="glass-effect rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-primary-500/20 transition-all duration-500"
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  className="glass-effect rounded-2xl overflow-hidden group hover:border-white/[0.14] hover:shadow-xl hover:shadow-black/40 transition-all duration-300"
                 >
-                  <div className={`h-2 bg-gradient-to-r ${hobby.color}`}></div>
-                  
-                  <div className="p-8">
+                  <div className="p-7 md:p-9">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                      {/* Hobby Info */}
-                      <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                        <h3 className="text-4xl font-bold gradient-text mb-6">
+                      <div className={`space-y-4 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                        <h3 className="text-2xl font-bold text-white">
                           {hobby.title}
                         </h3>
-                        <p className="text-gray-300 leading-relaxed text-lg">
+                        <p className="text-zinc-400 leading-relaxed text-sm">
                           {hobby.description}
                         </p>
                       </div>
-
-                      {/* Hobby Image */}
                       <motion.div
-                        whileHover={{ scale: 1.02 }}
+                        whileHover={{ scale: 1.01 }}
                         transition={{ duration: 0.3 }}
-                        className={`relative h-64 lg:h-96 overflow-hidden rounded-2xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
+                        className={`relative h-56 lg:h-80 overflow-hidden rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                       >
                         <img
                           src={hobby.image}
                           alt={hobby.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 border-4 border-primary-400/30 rounded-2xl"></div>
                       </motion.div>
                     </div>
                   </div>
@@ -454,47 +446,37 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="mb-16"
             >
-              <h3 className="text-3xl font-bold gradient-text mb-12 text-center">
-                Other Activities I Enjoy
+              <h3 className="text-xl font-semibold text-white mb-8 text-center">
+                Other Activities
               </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {otherHobbies.map((hobby, index) => (
                   <motion.div
                     key={hobby.title}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.06 }}
                     viewport={{ once: true }}
-                    whileHover={{ y: -10 }}
-                    className="glass-effect rounded-2xl overflow-hidden group cursor-pointer"
+                    className="glass-effect rounded-2xl overflow-hidden group card-hover"
                   >
-                    <div className={`h-2 bg-gradient-to-r ${hobby.color}`}></div>
-                    
-                    <div className="p-6">
-                      <h4 className="text-2xl font-bold text-white mb-4 text-center">
+                    <div className="relative h-52 overflow-hidden">
+                      <img
+                        src={hobby.image}
+                        alt={hobby.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h4 className="text-base font-semibold text-white mb-1">
                         {hobby.title}
                       </h4>
-                      
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
-                        className="relative h-64 overflow-hidden rounded-xl mb-4"
-                      >
-                        <img
-                          src={hobby.image}
-                          alt={hobby.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 border-2 border-white/20 rounded-xl"></div>
-                      </motion.div>
-                      
-                      <p className="text-gray-300 text-sm text-center italic">
+                      <p className="text-zinc-600 text-xs">
                         {hobby.caption}
                       </p>
                     </div>
@@ -507,32 +489,22 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-center"
             >
-              <div className="glass-effect p-12 rounded-3xl">
-                <h3 className="text-3xl font-bold gradient-text mb-6">
+              <div className="glass-effect p-10 rounded-2xl">
+                <h3 className="text-xl font-semibold text-white mb-4">
                   Stay Active, Stay Motivated
                 </h3>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  Sports and physical activities have shaped who I am today. They've taught me discipline, 
-                  teamwork, and the importance of staying healthy both physically and mentally. These experiences 
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-2xl">
+                  Sports and physical activities have shaped who I am today. They've taught me discipline,
+                  teamwork, and the importance of staying healthy both physically and mentally. These experiences
                   translate directly into my approach to programming and problem-solving.
                 </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <span className="px-4 py-2 bg-primary-500/20 text-primary-300 rounded-full text-sm font-medium">
-                    🏒 Hockey
-                  </span>
-                  <span className="px-4 py-2 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">
-                    ⚾ Baseball
-                  </span>
-                  <span className="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium">
-                    🏐 Volleyball
-                  </span>
-                  <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
-                    ⛷️ Outdoor Sports
-                  </span>
+                <div className="flex flex-wrap gap-2">
+                  {['🏒 Hockey', '⚾ Baseball', '🏐 Volleyball', '⛷️ Outdoor Sports'].map((tag) => (
+                    <span key={tag} className="tech-tag">{tag}</span>
+                  ))}
                 </div>
               </div>
             </motion.div>
