@@ -2,23 +2,65 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Award, Users, BookOpen } from 'lucide-react'
+import { Calendar, MapPin, Award, Users, BookOpen, ExternalLink, Youtube } from 'lucide-react'
 import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function Experience() {
   const workExperiences = [
     {
+      title: 'Incoming Software Developer Co-op',
+      company: 'Magnet Forensics',
+      location: 'Waterloo, Ontario (Hybrid)',
+      period: 'Sept 2026 – Dec 2026',
+      responsibilities: [
+        'Incoming co-op on the software development team for Fall 2026',
+        'Will ship production features for digital forensics software that acquires, analyzes, and shares evidence from computers, smartphones, and IoT devices',
+        'Magnet\'s software is used by law enforcement and enterprises globally to fight crime and protect national security'
+      ],
+      color: 'from-indigo-500 to-purple-500'
+    },
+    {
+      title: 'GenAI Engineer Intern',
+      company: 'RBC',
+      location: 'Toronto, Ontario',
+      period: 'June 2026 – Aug 2026',
+      responsibilities: [
+        'Built an evaluation framework for an internal audit AI agent, testing faithfulness, groundedness, hallucination rates, evidence retrieval, reproducibility, and human validation to support approval for bank-wide release',
+        'Developed a risk reporting agent for a senior executive that aggregates web and ORX data to surface emerging AI, fraud, and vendor risks',
+        'Automated preliminary risk triage for RBC\'s AI governance intake form, streamlining custom-agent reviews for the governance team',
+        'Built AI-powered tools for executives on RBC\'s internal AI tooling platform, improving process efficiency across teams'
+      ],
+      color: 'from-blue-500 to-yellow-500'
+    },
+    {
+      title: 'Spatial Data Associate',
+      company: 'Stealth Startup (a16z-Backed Spatial Intelligence)',
+      location: 'Toronto, Ontario',
+      period: 'May 2026 – June 2026',
+      responsibilities: [
+        'Captured high-fidelity 3D scans of real-world objects and environments using iPhone LiDAR and photogrammetry',
+        'Built foundational spatial datasets for training Large World Models (LWMs), targeting customers in mapping, autonomous vehicles, and world models',
+        'The company\'s premise: the world runs on LLMs; they\'re building the data layer to run it on LWMs'
+      ],
+      color: 'from-cyan-500 to-indigo-500'
+    },
+    {
       title: 'Founder',
       company: 'Reservely',
       location: 'Hybrid',
-      period: 'October 2024 – Present',
+      period: 'May 2025 – Present',
       image: '/images/reservely.jpg',
       responsibilities: [
         'Founded and launched a restaurant reservation platform to streamline dining experiences',
-        'Developed full-stack restaurant reservation system using React and Vite',
+        'Secured $3,000 in non-dilutive funding from the Ontario government to build the MVP',
+        'Implemented a plug-and-play booking link so restaurants can accept reservations with minimal setup',
+        'Developed full-stack restaurant reservation system built with React, Node.js, and Supabase',
         'Implemented real-time table booking features with dynamic availability tracking',
-        'Built responsive user interface components with modern design principles',
         'Created comprehensive business strategy and product roadmap for platform growth'
+      ],
+      links: [
+        { label: 'Launch', href: 'https://reservely.ca/for-businesses', type: 'live' },
+        { label: 'YouTube', href: 'https://youtu.be/USoM37xQ0Oc', type: 'youtube' }
       ],
       color: 'from-purple-500 to-blue-500'
     },
@@ -26,14 +68,14 @@ export default function Experience() {
       title: 'Lead Coding Instructor',
       company: 'Code Ninjas',
       location: 'Markham, Ontario',
-      period: 'September 2023 – June 2024',
+      period: 'June 2025 – Sept 2025',
       image: '/images/codeninjas.png',
       responsibilities: [
-        'Led programming instruction for children aged 7-14 using visual coding platforms',
+        'Delivered 300+ hours of programming instruction to 200+ students aged 7-14 using visual coding platforms',
+        'Led junior instructors to standardize technical lessons across classes',
         'Mentored students through game development projects and coding challenges',
         'Created engaging lesson plans that made complex programming concepts accessible',
-        'Monitored student progress and provided personalized feedback to enhance learning',
-        'Fostered a collaborative learning environment that encouraged creativity and problem-solving'
+        'Monitored student progress and provided personalized feedback to enhance learning'
       ],
       color: 'from-orange-500 to-red-500'
     },
@@ -53,21 +95,6 @@ export default function Experience() {
       color: 'from-red-500 to-pink-500'
     },
     {
-      title: 'Camp Counsellor',
-      company: 'Camp Green Acres',
-      location: 'Markham, Ontario',
-      period: 'June 2024 – August 2024',
-      image: '/images/camp.jpeg',
-      responsibilities: [
-        'Focused on maximizing each campers\' enjoyment while maintaining a safe environment',
-        'Led a variety of activities including various sports, providing the necessary support for campers of all skill levels',
-        'Effectively communicated with coworkers to ensure smooth transitions from one activity to the next',
-        'Provided solutions to parent concerns to ensure a rewarding experience for their children',
-        'Offered comfort and support to children to help them overcome challenges'
-      ],
-      color: 'from-green-500 to-blue-500'
-    },
-    {
       title: 'Sales Intern',
       company: 'SharpStakes',
       location: 'Remote',
@@ -81,6 +108,21 @@ export default function Experience() {
         'Maintained customer relationships and provided ongoing support to maximize user retention and satisfaction'
       ],
       color: 'from-green-500 to-teal-500'
+    },
+    {
+      title: 'Camp Counsellor',
+      company: 'Camp Green Acres',
+      location: 'Markham, Ontario',
+      period: 'June 2024 – August 2024',
+      image: '/images/camp.jpeg',
+      responsibilities: [
+        'Focused on maximizing each campers\' enjoyment while maintaining a safe environment',
+        'Led a variety of activities including various sports, providing the necessary support for campers of all skill levels',
+        'Effectively communicated with coworkers to ensure smooth transitions from one activity to the next',
+        'Provided solutions to parent concerns to ensure a rewarding experience for their children',
+        'Offered comfort and support to children to help them overcome challenges'
+      ],
+      color: 'from-green-500 to-blue-500'
     },
     {
       title: 'Referee',
@@ -115,6 +157,7 @@ export default function Experience() {
     {
       title: 'Vice President of Internal Affairs for School of Computer and Information Sciences (SOCIS)',
       organization: 'University of Guelph',
+      // TODO(Ben): confirm start date — resume says May 2024, site previously said April 2025
       period: 'April 2025 – Present',
       description: [
         'Coordinate internal operations and facilitate executive communication',
@@ -156,6 +199,27 @@ export default function Experience() {
 
   const awards = [
     {
+      title: 'HackRx 2025',
+      organization: 'University of Waterloo',
+      period: '2025',
+      description: 'Built NephroRx, a medication dosing platform for chronic kidney disease patients, at the HackRx healthcare hackathon.',
+      icon: Users
+    },
+    {
+      title: 'Gryph Hacks 2025',
+      organization: 'University of Guelph',
+      period: '2025',
+      description: 'Built "Am I Cooked?", generating 200+ user responses within 2 weeks of launch.',
+      icon: Users
+    },
+    {
+      title: 'Ontario Government Grant — $3,000',
+      organization: 'Government of Ontario',
+      period: '2025',
+      description: 'Non-dilutive funding awarded to Reservely to build the MVP.',
+      icon: Award
+    },
+    {
       title: 'Financial Literacy Competition',
       organization: 'University of Waterloo',
       period: 'May 2024',
@@ -172,8 +236,8 @@ export default function Experience() {
     {
       title: 'Dean\'s Honours List - University',
       organization: 'University of Guelph',
-      period: 'September 2024 - January 2025',
-      description: 'Placed on the College of Engineering & Physical Sciences Dean\'s Honours List after achieving an 80% or above average in the Fall 2024 semester.',
+      period: 'Fall 2024 - Present',
+      description: 'Placed on the College of Engineering & Physical Sciences Dean\'s Honours List every semester since Fall 2024, maintaining a 4.0 GPA (92.5% average).',
       icon: BookOpen
     },
     {
@@ -258,6 +322,33 @@ export default function Experience() {
                             </li>
                           ))}
                         </ul>
+
+                        {exp.links && (
+                          <div className="flex flex-wrap gap-3 pt-1">
+                            {exp.links.map((link) => (
+                              <motion.a
+                                key={link.label}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className={
+                                  link.type === 'live'
+                                    ? 'flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors'
+                                    : 'flex items-center gap-2 glass-effect border border-white/[0.1] hover:bg-white/[0.08] text-zinc-300 hover:text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors'
+                                }
+                              >
+                                {link.type === 'live' ? (
+                                  <ExternalLink size={16} />
+                                ) : (
+                                  <Youtube size={16} className="text-red-500" />
+                                )}
+                                {link.label}
+                              </motion.a>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                       {/* Experience Image */}
@@ -266,14 +357,22 @@ export default function Experience() {
                         transition={{ duration: 0.3 }}
                         className={`relative h-56 lg:h-72 overflow-hidden rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                       >
-                        <img
-                          src={exp.image}
-                          alt={exp.title}
-                          className={`w-full h-full transition-transform duration-500 group-hover:scale-[1.03] ${
-                            exp.company === 'SharpStakes' ? 'object-fill' : 'object-cover'
-                          }`}
-                          loading="lazy"
-                        />
+                        {exp.image ? (
+                          <img
+                            src={exp.image}
+                            alt={exp.title}
+                            className={`w-full h-full transition-transform duration-500 group-hover:scale-[1.03] ${
+                              exp.company === 'SharpStakes' ? 'object-fill' : 'object-cover'
+                            }`}
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className={`w-full h-full bg-gradient-to-br ${exp.color} opacity-60 flex items-center justify-center`}>
+                            <span className="text-white text-2xl md:text-3xl font-bold text-center px-8 drop-shadow-lg">
+                              {exp.company}
+                            </span>
+                          </div>
+                        )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                       </motion.div>
                     </div>
