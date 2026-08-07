@@ -74,7 +74,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.15 }}
                   className="section-label"
                 >
-                  Computer Science Student &middot; Statistics Minor
+                  Computer Science Student
                 </motion.span>
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function Home() {
                   transition={{ duration: 0.7, delay: 0.3 }}
                   className="text-lg md:text-xl text-zinc-500 font-medium"
                 >
-                  CS Student @ University of Guelph &middot; GenAI Engineer Intern @ RBC &middot; Incoming SWE Co-op @ Magnet Forensics
+                  CS Student @ University of Guelph &middot; Statistics Minor
                 </motion.h2>
               </div>
 
@@ -102,10 +102,9 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="text-base text-zinc-400 leading-relaxed max-w-lg"
               >
-                Founder of Reservely and GenAI engineer at RBC, I build AI products end to end,
-                from evaluation frameworks and risk agents to full-stack platforms. Passionate
-                about building things that matter at the intersection of software, machine
-                learning, and real-world impact.
+                Passionate about building things that matter, from AI-powered apps to full-stack
+                platforms. Currently exploring the intersection of software, machine learning, and
+                real-world impact.
               </motion.p>
 
               {/* Interest tags */}

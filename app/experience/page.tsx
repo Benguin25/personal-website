@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Award, Users, BookOpen, ExternalLink, Youtube } from 'lucide-react'
+import { Calendar, MapPin, Award, Users, BookOpen } from 'lucide-react'
 import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function Experience() {
@@ -43,26 +43,6 @@ export default function Experience() {
         'The company\'s premise: the world runs on LLMs; they\'re building the data layer to run it on LWMs'
       ],
       color: 'from-cyan-500 to-indigo-500'
-    },
-    {
-      title: 'Founder',
-      company: 'Reservely',
-      location: 'Hybrid',
-      period: 'May 2025 – Present',
-      image: '/images/reservely.jpg',
-      responsibilities: [
-        'Founded and launched a restaurant reservation platform to streamline dining experiences',
-        'Secured $3,000 in non-dilutive funding from the Ontario government to build the MVP',
-        'Implemented a plug-and-play booking link so restaurants can accept reservations with minimal setup',
-        'Developed full-stack restaurant reservation system built with React, Node.js, and Supabase',
-        'Implemented real-time table booking features with dynamic availability tracking',
-        'Created comprehensive business strategy and product roadmap for platform growth'
-      ],
-      links: [
-        { label: 'Launch', href: 'https://reservely.ca/for-businesses', type: 'live' },
-        { label: 'YouTube', href: 'https://youtu.be/USoM37xQ0Oc', type: 'youtube' }
-      ],
-      color: 'from-purple-500 to-blue-500'
     },
     {
       title: 'Lead Coding Instructor',
@@ -157,8 +137,7 @@ export default function Experience() {
     {
       title: 'Vice President of Internal Affairs for School of Computer and Information Sciences (SOCIS)',
       organization: 'University of Guelph',
-      // TODO(Ben): confirm start date — resume says May 2024, site previously said April 2025
-      period: 'April 2025 – Present',
+      period: 'May 2025 – Present',
       description: [
         'Coordinate internal operations and facilitate executive communication',
         'Organize and manage executive meetings for productive decision-making',
@@ -322,33 +301,6 @@ export default function Experience() {
                             </li>
                           ))}
                         </ul>
-
-                        {exp.links && (
-                          <div className="flex flex-wrap gap-3 pt-1">
-                            {exp.links.map((link) => (
-                              <motion.a
-                                key={link.label}
-                                href={link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className={
-                                  link.type === 'live'
-                                    ? 'flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors'
-                                    : 'flex items-center gap-2 glass-effect border border-white/[0.1] hover:bg-white/[0.08] text-zinc-300 hover:text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors'
-                                }
-                              >
-                                {link.type === 'live' ? (
-                                  <ExternalLink size={16} />
-                                ) : (
-                                  <Youtube size={16} className="text-red-500" />
-                                )}
-                                {link.label}
-                              </motion.a>
-                            ))}
-                          </div>
-                        )}
                       </div>
 
                       {/* Experience Image */}
