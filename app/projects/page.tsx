@@ -8,9 +8,19 @@ import SwirlBackground from '../../components/SwirlBackground.js'
 export default function Projects() {
   const projects = [
     {
+      title: 'Reservely',
+      description: 'A lightweight, low-cost reservation system for small restaurants and cafes.',
+      longDescription: 'Reservely is a lightweight, low-cost reservation system built for small restaurants and cafes. Backed by $3,000 in non-dilutive funding from the Ontario government to build the MVP, it features a plug-and-play booking link so restaurants can start accepting reservations with minimal setup.',
+      image: '/images/reservely.jpg',
+      youtube: 'https://youtu.be/USoM37xQ0Oc',
+      live: 'https://reservely.ca/for-businesses',
+      technologies: ['React', 'Node.js', 'Supabase', 'Founder'],
+      color: 'from-purple-500 to-blue-500'
+    },
+    {
       title: 'MyRoommate',
       description: 'Find your perfect roommate match with MyRoommate!',
-      longDescription: 'MyRoommate is a roommate-finding platform that connects people looking for compatible living arrangements. Users can create profiles, set preferences, and browse potential roommates to find the ideal match for their lifestyle and budget.',
+      longDescription: 'MyRoommate is a roommate-finding platform that uses AI-driven compatibility scoring from behavioral data to connect people looking for compatible living arrangements. Each match comes with LLM-generated explanations that justify match quality, giving users transparency into why a roommate is a good fit for their lifestyle and budget.',
       image: '/images/myroommate.png',
       github: 'https://github.com/Benguin25/MyRoommate',
       live: 'https://myroommate.net/',
@@ -19,23 +29,24 @@ export default function Projects() {
     },
     {
       title: 'NephroRx',
-      description: 'A comprehensive medication dosing calculator for patients with chronic kidney disease.',
-      longDescription: 'NephroRx is a full-stack web application that helps healthcare providers calculate accurate medication dosages for chronic kidney disease patients based on their kidney function. Features automated PDF processing using OCR and NLP, real-time dosing calculations with eGFR assessments, and a modern responsive interface built with React and Tailwind CSS.',
+      description: 'A comprehensive medication dosing platform for patients with chronic kidney disease.',
+      longDescription: 'NephroRx is a full-stack web application that helps healthcare providers calculate accurate medication dosages for chronic kidney disease patients based on their kidney function. It processes MRI/CT data into interactive 3D models with volumetric analysis, and uses OCR/NLP pipelines for automated PDF ingestion that powers real-time eGFR-based dosing calculations, all behind a modern responsive interface.',
       image: '/images/nephrorx.png',
+      badge: 'HackRx 2025, UWaterloo',
       github: 'https://github.com/NephroRx/NephroRx',
       youtube: 'https://youtu.be/Yyc4ZI_9fSk',
       live: 'https://nephrorx.app/',
-      technologies: ['React', 'Python', 'Flask', 'Tailwind CSS', 'OCR', 'NLP', 'Healthcare'],
+      technologies: ['React', 'Python', 'Flask', 'TypeScript', 'Node.js', 'Docker', 'MongoDB', 'OCR', 'NLP', 'Healthcare', '3D Visualization'],
       color: 'from-blue-500 to-cyan-600'
     },
     {
       title: 'ClearSite',
       description: 'Streamline property management with intelligent asset tracking and maintenance scheduling!',
-      longDescription: 'ClearSite is a property management platform that brings intelligent asset tracking, maintenance scheduling, and comprehensive documentation together in one place. Designed to simplify the complexities of managing properties so you can focus on what matters.',
+      longDescription: 'ClearSite is a property management platform that brings intelligent asset tracking, maintenance scheduling, and comprehensive documentation together in one place. Its Gemini API integration turns database records into natural-language summaries and recommendations, powered by backend workflows that pipe structured SQL/NoSQL data into LLM pipelines.',
       image: '/images/clearsite.png',
       github: 'https://github.com/Benguin25/ClearSite',
       live: 'https://clear-site-coral.vercel.app/',
-      technologies: ['React', 'TypeScript', 'Vercel', 'Web App'],
+      technologies: ['React', 'TypeScript', 'Supabase', 'Gemini API', 'Vercel', 'Web App'],
       color: 'from-sky-500 to-blue-600'
     },
     {
@@ -52,8 +63,9 @@ export default function Projects() {
     {
       title: 'Am I Cooked?',
       description: 'A witty web application that analyzes your life choices and tells you if you\'re "cooked"!',
-      longDescription: 'Am I Cooked? is a full-stack web application that uses AI to analyze user inputs about their life situation and provides humorous feedback on whether they\'re in trouble. Built with modern web technologies and featuring a responsive design with interactive elements.',
+      longDescription: 'Am I Cooked? is a full-stack web application that uses AI to analyze user inputs about their life situation and provides humorous feedback on whether they\'re in trouble. Deployed full-stack in under 30 hours at Gryph Hacks 2025, it generated 200+ user responses within 2 weeks of launch.',
       image: '/images/amicooked.png',
+      badge: 'Gryph Hacks 2025',
       github: 'https://github.com/Benguin25/am-i-cooked',
       youtube: 'https://youtu.be/_i0HK6yL78I',
       live: 'https://am-i-cooked-zeta.vercel.app/',
@@ -87,6 +99,30 @@ export default function Projects() {
       github: 'https://github.com/Benguin25/drone-photography',
       technologies: ['Photography', 'HTML', 'CSS', 'Web Design'],
       color: 'from-purple-500 to-pink-600'
+    }
+  ]
+
+  // TODO(Ben): add any other videos from youtube.com/@BenProbert25 here with their actual titles
+  const videos = [
+    {
+      title: 'Reservely Demo',
+      id: 'USoM37xQ0Oc',
+      url: 'https://youtu.be/USoM37xQ0Oc'
+    },
+    {
+      title: 'NephroRx Demo',
+      id: 'Yyc4ZI_9fSk',
+      url: 'https://youtu.be/Yyc4ZI_9fSk'
+    },
+    {
+      title: 'Am I Cooked? Demo',
+      id: '_i0HK6yL78I',
+      url: 'https://youtu.be/_i0HK6yL78I'
+    },
+    {
+      title: 'Smart Funds Demo',
+      id: 'nnPvx1uZrJo',
+      url: 'https://youtu.be/nnPvx1uZrJo'
     }
   ]
 
@@ -128,9 +164,16 @@ export default function Projects() {
                     {/* Info side */}
                     <div className={`space-y-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                       <div>
-                        <h3 className="text-2xl font-bold text-white mb-1.5">
-                          {project.title}
-                        </h3>
+                        <div className="flex flex-wrap items-center gap-3 mb-1.5">
+                          <h3 className="text-2xl font-bold text-white">
+                            {project.title}
+                          </h3>
+                          {project.badge && (
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-indigo-500/[0.15] border border-indigo-400/[0.25] text-indigo-300 text-xs font-medium">
+                              {project.badge}
+                            </span>
+                          )}
+                        </div>
                         <p className="text-sm text-zinc-400 font-medium mb-3">
                           {project.description}
                         </p>
@@ -148,17 +191,19 @@ export default function Projects() {
 
                       {/* Action buttons */}
                       <div className="flex flex-wrap gap-3 pt-1">
-                        <motion.a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="flex items-center gap-2 glass-effect border border-white/[0.1] hover:bg-white/[0.08] text-zinc-300 hover:text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
-                        >
-                          <Github size={16} />
-                          GitHub
-                        </motion.a>
+                        {project.github && (
+                          <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="flex items-center gap-2 glass-effect border border-white/[0.1] hover:bg-white/[0.08] text-zinc-300 hover:text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-colors"
+                          >
+                            <Github size={16} />
+                            GitHub
+                          </motion.a>
+                        )}
 
                         {project.live && (
                           <motion.a
@@ -209,6 +254,72 @@ export default function Projects() {
               </motion.div>
             ))}
           </div>
+
+          {/* Divider */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="w-full h-px bg-white/[0.06] my-20"
+          ></motion.div>
+
+          {/* Video Demos Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-2xl font-semibold text-white mb-3">Project Demos</h2>
+              <p className="text-sm text-zinc-600 max-w-xl mx-auto">
+                Video walkthroughs of my projects, from my{' '}
+                <a
+                  href="https://www.youtube.com/@BenProbert25"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-400 hover:text-indigo-300 transition-colors"
+                >
+                  YouTube channel
+                </a>.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {videos.map((video, index) => (
+                <motion.a
+                  key={video.id}
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  viewport={{ once: true }}
+                  className="glass-effect rounded-2xl overflow-hidden group card-hover block"
+                >
+                  <div className="relative h-40 overflow-hidden">
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                      alt={video.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-12 h-12 rounded-full bg-red-600 group-hover:bg-red-500 flex items-center justify-center transition-colors">
+                        <Youtube size={22} className="text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4 flex items-center justify-between">
+                    <h4 className="text-sm font-semibold text-white">{video.title}</h4>
+                    <ExternalLink size={14} className="text-zinc-600 group-hover:text-zinc-400 transition-colors flex-shrink-0" />
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -143,7 +143,7 @@ export default function About() {
           >
             <h2 className="text-2xl font-semibold text-white mb-8">Introduction</h2>
             <p className="text-base text-zinc-400 max-w-3xl mx-auto leading-relaxed mb-14">
-              Hi, I'm Benjamin Probert, a second year student from Markham, Ontario. 
+              Hi, I'm Benjamin Probert, a third year student from Markham, Ontario.
               I am currently studying for my Bachelor of Computing degree, majoring in Computer Science Honours, 
               with a minor in Statistics at the University of Guelph. 
               I have a strong passion for Artificial Intelligence, Game Development, Embedded Systems (IoT), and Computer Vision.
@@ -158,8 +158,8 @@ export default function About() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-5xl font-bold text-white mb-2">93.4%</div>
-                <div className="text-zinc-500 text-sm">Current GPA</div>
+                <div className="text-5xl font-bold text-white mb-2">4.0</div>
+                <div className="text-zinc-500 text-sm">GPA (92.5% Average)</div>
               </motion.div>
               
               <motion.div
@@ -327,9 +327,9 @@ export default function About() {
               <div className="glass-effect p-7 rounded-2xl">
                 <p className="text-zinc-400 leading-relaxed text-sm">
                   I am driven by a passion for academic excellence and personal growth. Academically, I prioritize my grades over
-                  anything else. I am on the Dean's Honour's List for my first semester at UOFG. I have been honour roll at my high school
-                  all four years that I attended. My GPA for my first semester was a 93.4%, and I plan to keep it similar for my following semesters.
-                  As for clubs, I am hoping to join the executive team as SOCIS's VP of Internal Affairs!
+                  anything else. I have been on the Dean's Honours List every semester since Fall 2024, maintaining a 4.0 GPA (92.5% average).
+                  I was also on the honour roll at my high school all four years that I attended.
+                  As for clubs, I currently serve on the executive team as SOCIS's VP of Internal Affairs!
                 </p>
               </div>
             </div>
