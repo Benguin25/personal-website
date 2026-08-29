@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Award, Users, BookOpen } from 'lucide-react'
+import Link from 'next/link'
+import { Calendar, MapPin, Award, Users, BookOpen, ArrowRight } from 'lucide-react'
 import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function Experience() {
@@ -30,7 +31,8 @@ export default function Experience() {
         'Automated preliminary risk triage for RBC\'s AI governance intake form, streamlining custom-agent reviews for the governance team',
         'Built AI-powered tools for executives on RBC\'s internal AI tooling platform, improving process efficiency across teams'
       ],
-      color: 'from-blue-500 to-yellow-500'
+      color: 'from-blue-500 to-yellow-500',
+      report: { href: '/rbc-2026', label: 'Read my work term report' }
     },
     {
       title: 'Spatial Data Associate',
@@ -301,6 +303,17 @@ export default function Experience() {
                             </li>
                           ))}
                         </ul>
+
+                        {exp.report && (
+                          <Link
+                            href={exp.report.href}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-white/[0.08] border border-white/[0.1] text-indigo-300 hover:bg-white/[0.12] hover:text-indigo-200 hover:border-indigo-400/30 transition-all duration-200"
+                          >
+                            <BookOpen size={15} />
+                            <span>{exp.report.label}</span>
+                            <ArrowRight size={15} />
+                          </Link>
+                        )}
                       </div>
 
                       {/* Experience Image */}
