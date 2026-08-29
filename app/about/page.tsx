@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function About() {
   const images = [
@@ -112,9 +111,6 @@ export default function About() {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Swirl Background */}
-      <SwirlBackground />
-      
       {/* Hero Section */}
       <section className="relative section-padding">
         <div className="max-w-7xl mx-auto">

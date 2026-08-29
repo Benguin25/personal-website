@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Award, Users, BookOpen } from 'lucide-react'
-import SwirlBackground from '../../components/SwirlBackground.js'
+import Link from 'next/link'
+import { Calendar, MapPin, Award, Users, BookOpen, ArrowRight } from 'lucide-react'
 
 export default function Experience() {
   const workExperiences = [
@@ -30,7 +30,9 @@ export default function Experience() {
         'Automated preliminary risk triage for RBC\'s AI governance intake form, streamlining custom-agent reviews for the governance team',
         'Built AI-powered tools for executives on RBC\'s internal AI tooling platform, improving process efficiency across teams'
       ],
-      color: 'from-blue-500 to-yellow-500'
+      color: 'from-blue-500 to-yellow-500',
+      image: '/rbc-2026/team.jpg',
+      report: { href: '/rbc-2026', label: 'Read my work term report' }
     },
     {
       title: 'Spatial Data Associate',
@@ -42,7 +44,8 @@ export default function Experience() {
         'Built foundational spatial datasets for training Large World Models (LWMs), targeting customers in mapping, autonomous vehicles, and world models',
         'The company\'s premise: the world runs on LLMs; they\'re building the data layer to run it on LWMs'
       ],
-      color: 'from-cyan-500 to-indigo-500'
+      color: 'from-cyan-500 to-indigo-500',
+      images: ['/stealth-2026/river.webp', '/stealth-2026/equipment.webp']
     },
     {
       title: 'Lead Coding Instructor',
@@ -230,9 +233,6 @@ export default function Experience() {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Swirl Background */}
-      <SwirlBackground />
-      
       {/* Hero Section */}
       <section className="relative section-padding">
         <div className="max-w-7xl mx-auto">
@@ -301,6 +301,17 @@ export default function Experience() {
                             </li>
                           ))}
                         </ul>
+
+                        {exp.report && (
+                          <Link
+                            href={exp.report.href}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-white/[0.08] border border-white/[0.1] text-indigo-300 hover:bg-white/[0.12] hover:text-indigo-200 hover:border-indigo-400/30 transition-all duration-200"
+                          >
+                            <BookOpen size={15} />
+                            <span>{exp.report.label}</span>
+                            <ArrowRight size={15} />
+                          </Link>
+                        )}
                       </div>
 
                       {/* Experience Image */}
@@ -309,7 +320,19 @@ export default function Experience() {
                         transition={{ duration: 0.3 }}
                         className={`relative h-56 lg:h-72 overflow-hidden rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                       >
-                        {exp.image ? (
+                        {exp.images ? (
+                          <div className="grid grid-cols-2 gap-2 w-full">
+                            {exp.images.map((src) => (
+                              <img
+                                key={src}
+                                src={src}
+                                alt={exp.title}
+                                className="w-full h-56 lg:h-72 object-cover object-[center_65%] rounded-lg transition-transform duration-500 group-hover:scale-[1.03]"
+                                loading="lazy"
+                              />
+                            ))}
+                          </div>
+                        ) : exp.image ? (
                           <img
                             src={exp.image}
                             alt={exp.title}
