@@ -136,7 +136,7 @@ export default function Home() {
                 </motion.a>
 
                 <motion.a
-                  href="/Benjamin_Probert_Technical_Resume.pdf"
+                  href="/Benjamin_Probert_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}

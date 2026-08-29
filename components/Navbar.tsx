@@ -83,7 +83,7 @@ const Navbar = () => {
             ))}
 
             <motion.a
-              href="/Benjamin_Probert_Technical_Resume.pdf"
+              href="/Benjamin_Probert_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: -10 }}
@@ -136,7 +136,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="/Benjamin_Probert_Technical_Resume.pdf"
+                href="/Benjamin_Probert_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block mt-2 px-4 py-2.5 rounded-lg text-sm font-medium text-center bg-white text-black"
