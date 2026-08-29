@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Calendar, MapPin, Award, Users, BookOpen, ArrowRight } from 'lucide-react'
-import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function Experience() {
   const workExperiences = [
@@ -232,9 +231,6 @@ export default function Experience() {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Swirl Background */}
-      <SwirlBackground />
-      
       {/* Hero Section */}
       <section className="relative section-padding">
         <div className="max-w-7xl mx-auto">

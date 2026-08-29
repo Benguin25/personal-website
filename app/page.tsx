@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import SwirlBackground from '../components/SwirlBackground.js'
 
 const socialLinks = [
   {
@@ -39,8 +38,6 @@ const highlights = ['AI & Machine Learning', 'Full-Stack Dev', 'Game Development
 export default function Home() {
   return (
     <div className="min-h-screen pt-16">
-      <SwirlBackground />
-
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">

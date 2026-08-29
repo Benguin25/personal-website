@@ -3,7 +3,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Youtube } from 'lucide-react'
-import SwirlBackground from '../../components/SwirlBackground.js'
 
 export default function Projects() {
   const projects = [
@@ -128,8 +127,6 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen pt-16">
-      <SwirlBackground />
-
       <section className="relative section-padding">
         <div className="max-w-7xl mx-auto">
           {/* Page heading */}
