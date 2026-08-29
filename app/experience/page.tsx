@@ -44,7 +44,8 @@ export default function Experience() {
         'Built foundational spatial datasets for training Large World Models (LWMs), targeting customers in mapping, autonomous vehicles, and world models',
         'The company\'s premise: the world runs on LLMs; they\'re building the data layer to run it on LWMs'
       ],
-      color: 'from-cyan-500 to-indigo-500'
+      color: 'from-cyan-500 to-indigo-500',
+      images: ['/stealth-2026/river.webp', '/stealth-2026/equipment.webp']
     },
     {
       title: 'Lead Coding Instructor',
@@ -319,7 +320,19 @@ export default function Experience() {
                         transition={{ duration: 0.3 }}
                         className={`relative h-56 lg:h-72 overflow-hidden rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                       >
-                        {exp.image ? (
+                        {exp.images ? (
+                          <div className="grid grid-cols-2 gap-2 w-full">
+                            {exp.images.map((src) => (
+                              <img
+                                key={src}
+                                src={src}
+                                alt={exp.title}
+                                className="w-full h-56 lg:h-72 object-cover object-[center_65%] rounded-lg transition-transform duration-500 group-hover:scale-[1.03]"
+                                loading="lazy"
+                              />
+                            ))}
+                          </div>
+                        ) : exp.image ? (
                           <img
                             src={exp.image}
                             alt={exp.title}
