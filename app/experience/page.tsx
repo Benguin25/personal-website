@@ -31,6 +31,7 @@ export default function Experience() {
         'Built AI-powered tools for executives on RBC\'s internal AI tooling platform, improving process efficiency across teams'
       ],
       color: 'from-blue-500 to-yellow-500',
+      image: '/rbc-2026/standup.jpg',
       report: { href: '/rbc-2026', label: 'Read my work term report' }
     },
     {
