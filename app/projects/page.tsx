@@ -1,10 +1,29 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { ExternalLink, Github, Youtube } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ExternalLink, Github, X, Youtube } from 'lucide-react'
 
 export default function Projects() {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null)
+
+  useEffect(() => {
+    if (!selectedImage) return
+
+    const previousOverflow = document.body.style.overflow
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedImage(null)
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedImage])
+
   const projects = [
     {
       title: 'Reservely',
@@ -17,14 +36,16 @@ export default function Projects() {
       color: 'from-purple-500 to-blue-500'
     },
     {
-      title: 'MyRoommate',
-      description: 'Find your perfect roommate match with MyRoommate!',
-      longDescription: 'MyRoommate is a roommate-finding platform that uses AI-driven compatibility scoring from behavioral data to connect people looking for compatible living arrangements. Each match comes with LLM-generated explanations that justify match quality, giving users transparency into why a roommate is a good fit for their lifestyle and budget.',
-      image: '/images/myroommate.png',
-      github: 'https://github.com/Benguin25/MyRoommate',
-      live: 'https://myroommate.net/',
-      technologies: ['React', 'Node.js', 'Full-Stack', 'Web App'],
-      color: 'from-teal-500 to-green-600'
+      title: 'Relay311',
+      description: 'Voice-first 311 reporting that turns natural conversations into structured city service requests.',
+      longDescription: 'Built at a hackathon, Relay311 lets residents call and describe an issue naturally. Vapi transcribes the call, then a rule-based pipeline structures and routes the report to support more responsive, sustainable communities.',
+      image: '/images/relay311.png',
+      objectFit: 'contain-full',
+      badge: 'Hackathon · UN SDG 11',
+      github: 'https://github.com/coltonalmeida/Relay311',
+      youtube: 'https://www.youtube.com/@BenProbert25',
+      technologies: ['Next.js', 'TypeScript', 'Vapi', 'Supabase', 'Google Gemini', 'MapLibre GL'],
+      color: 'from-green-500 to-orange-500'
     },
     {
       title: 'NephroRx',
@@ -37,6 +58,16 @@ export default function Projects() {
       live: 'https://nephrorx.app/',
       technologies: ['React', 'Python', 'Flask', 'TypeScript', 'Node.js', 'Docker', 'MongoDB', 'OCR', 'NLP', 'Healthcare', '3D Visualization'],
       color: 'from-blue-500 to-cyan-600'
+    },
+    {
+      title: 'MyRoommate',
+      description: 'Find your perfect roommate match with MyRoommate!',
+      longDescription: 'MyRoommate is a roommate-finding platform that uses AI-driven compatibility scoring from behavioral data to connect people looking for compatible living arrangements. Each match comes with LLM-generated explanations that justify match quality, giving users transparency into why a roommate is a good fit for their lifestyle and budget.',
+      image: '/images/myroommate.png',
+      github: 'https://github.com/Benguin25/MyRoommate',
+      live: 'https://myroommate.net/',
+      technologies: ['React', 'Node.js', 'Full-Stack', 'Web App'],
+      color: 'from-teal-500 to-green-600'
     },
     {
       title: 'ClearSite',
@@ -238,13 +269,20 @@ export default function Projects() {
                       transition={{ duration: 0.3 }}
                       className={`relative h-56 lg:h-72 overflow-hidden rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                     >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className={`w-full h-full ${project.objectFit === 'contain' ? 'object-contain p-4' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.03]`}
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      <button
+                        type="button"
+                        onClick={() => setSelectedImage({ src: project.image, alt: project.title })}
+                        className="relative block w-full h-full cursor-zoom-in"
+                        aria-label={`View ${project.title} image fullscreen`}
+                      >
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className={`w-full h-full ${project.objectFit === 'contain' ? 'object-contain p-4' : project.objectFit === 'contain-full' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.03]`}
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                      </button>
                     </motion.div>
                   </div>
                 </div>
@@ -319,6 +357,48 @@ export default function Projects() {
           </motion.div>
         </div>
       </section>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8"
+            onClick={() => setSelectedImage(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${selectedImage.alt} fullscreen image`}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-4 top-4 sm:right-6 sm:top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-white/10 transition-colors"
+              aria-label="Close fullscreen image"
+              autoFocus
+            >
+              <X size={22} />
+            </button>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.2 }}
+              className="flex max-h-full max-w-full flex-col items-center gap-3"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-h-[85vh] max-w-[95vw] rounded-xl object-contain shadow-2xl shadow-black/50"
+              />
+              <p className="text-sm font-medium text-zinc-300">{selectedImage.alt}</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

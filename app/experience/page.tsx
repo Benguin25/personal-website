@@ -1,11 +1,30 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import { Calendar, MapPin, Award, Users, BookOpen, ArrowRight } from 'lucide-react'
+import { Calendar, MapPin, Award, Users, BookOpen, ArrowRight, X } from 'lucide-react'
 
 export default function Experience() {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null)
+
+  useEffect(() => {
+    if (!selectedImage) return
+
+    const previousOverflow = document.body.style.overflow
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedImage(null)
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedImage])
+
   const workExperiences = [
     {
       title: 'Incoming Software Developer Co-op',
@@ -97,7 +116,8 @@ export default function Experience() {
       company: 'Camp Green Acres',
       location: 'Markham, Ontario',
       period: 'June 2024 – August 2024',
-      image: '/images/camp.jpeg',
+      image: '/images/camp-green-acres.png',
+      objectFit: 'contain-full',
       responsibilities: [
         'Focused on maximizing each campers\' enjoyment while maintaining a safe environment',
         'Led a variety of activities including various sports, providing the necessary support for campers of all skill levels',
@@ -323,24 +343,42 @@ export default function Experience() {
                         {exp.images ? (
                           <div className="grid grid-cols-2 gap-2 w-full">
                             {exp.images.map((src) => (
-                              <img
+                              <button
                                 key={src}
-                                src={src}
-                                alt={exp.title}
-                                className="w-full h-56 lg:h-72 object-cover object-[center_65%] rounded-lg transition-transform duration-500 group-hover:scale-[1.03]"
-                                loading="lazy"
-                              />
+                                type="button"
+                                onClick={() => setSelectedImage({ src, alt: `${exp.company} — ${exp.title}` })}
+                                className="h-56 lg:h-72 overflow-hidden rounded-lg cursor-zoom-in"
+                                aria-label={`View ${exp.company} image fullscreen`}
+                              >
+                                <img
+                                  src={src}
+                                  alt={`${exp.company} — ${exp.title}`}
+                                  className="w-full h-full object-cover object-[center_65%] transition-transform duration-500 group-hover:scale-[1.03]"
+                                  loading="lazy"
+                                />
+                              </button>
                             ))}
                           </div>
                         ) : exp.image ? (
-                          <img
-                            src={exp.image}
-                            alt={exp.title}
-                            className={`w-full h-full transition-transform duration-500 group-hover:scale-[1.03] ${
-                              exp.company === 'SharpStakes' ? 'object-fill' : 'object-cover'
-                            }`}
-                            loading="lazy"
-                          />
+                          <button
+                            type="button"
+                            onClick={() => setSelectedImage({ src: exp.image, alt: `${exp.company} — ${exp.title}` })}
+                            className="block w-full h-full cursor-zoom-in"
+                            aria-label={`View ${exp.company} image fullscreen`}
+                          >
+                            <img
+                              src={exp.image}
+                              alt={`${exp.company} — ${exp.title}`}
+                              className={`w-full h-full transition-transform duration-500 group-hover:scale-[1.03] ${
+                                exp.company === 'SharpStakes'
+                                  ? 'object-fill'
+                                  : exp.objectFit === 'contain-full'
+                                    ? 'object-contain'
+                                    : 'object-cover'
+                              }`}
+                              loading="lazy"
+                            />
+                          </button>
                         ) : (
                           <div className={`w-full h-full bg-gradient-to-br ${exp.color} opacity-60 flex items-center justify-center`}>
                             <span className="text-white text-2xl md:text-3xl font-bold text-center px-8 drop-shadow-lg">
@@ -348,7 +386,7 @@ export default function Experience() {
                             </span>
                           </div>
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                       </motion.div>
                     </div>
                   </div>
@@ -443,6 +481,48 @@ export default function Experience() {
           </motion.div>
         </div>
       </section>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8"
+            onClick={() => setSelectedImage(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${selectedImage.alt} fullscreen image`}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-4 top-4 sm:right-6 sm:top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white hover:bg-white/10 transition-colors"
+              aria-label="Close fullscreen image"
+              autoFocus
+            >
+              <X size={22} />
+            </button>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.2 }}
+              className="flex max-h-full max-w-full flex-col items-center gap-3"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-h-[85vh] max-w-[95vw] rounded-xl object-contain shadow-2xl shadow-black/50"
+              />
+              <p className="text-sm font-medium text-zinc-300">{selectedImage.alt}</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
