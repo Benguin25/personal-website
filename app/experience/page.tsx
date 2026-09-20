@@ -201,6 +201,13 @@ export default function Experience() {
 
   const awards = [
     {
+      title: 'Future Legends Hackathon',
+      organization: 'University of Toronto',
+      period: '2026',
+      description: 'Built Relay311, a voice-first municipal reporting system that makes it easier for residents to report city issues.',
+      icon: Users
+    },
+    {
       title: 'HackRx 2025',
       organization: 'University of Waterloo',
       period: '2025',
