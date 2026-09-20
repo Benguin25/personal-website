@@ -5,4 +5,7 @@ dist/
 build/
 .vercel/
 .env*
+!.env.example
 .DS_Store
+
+prompt.md

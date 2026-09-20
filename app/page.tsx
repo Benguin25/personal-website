@@ -2,6 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { GitHubActivity } from '@/components/GitHubActivity'
+import { SpotifyStatus } from '@/components/SpotifyStatus'
 
 const socialLinks = [
   {
@@ -91,6 +93,16 @@ export default function Home() {
                   CS Student @ University of Guelph &middot; Statistics Minor
                 </motion.h2>
               </div>
+
+              {/* Live Spotify status */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.35 }}
+                className="max-w-lg"
+              >
+                <SpotifyStatus />
+              </motion.div>
 
               {/* Description */}
               <motion.p
@@ -208,6 +220,10 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <main className="mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+        <GitHubActivity />
+      </main>
     </div>
   )
 }
