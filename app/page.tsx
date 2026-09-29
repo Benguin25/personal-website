@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { GitHubActivity } from '@/components/GitHubActivity'
 import { SpotifyStatus } from '@/components/SpotifyStatus'
+import { ExternalLink, Youtube } from 'lucide-react'
 
 const socialLinks = [
   {
@@ -36,6 +37,12 @@ const socialLinks = [
 ]
 
 const highlights = ['AI & Machine Learning', 'Full-Stack Dev', 'Game Development', 'Embedded Systems']
+
+const featuredDemos = [
+  { title: 'Relay311', id: 'Q77brk22QoM', url: 'https://www.youtube.com/watch?v=Q77brk22QoM' },
+  { title: 'Reservely', id: 'USoM37xQ0Oc', url: 'https://youtu.be/USoM37xQ0Oc' },
+  { title: 'NephroRx', id: 'Yyc4ZI_9fSk', url: 'https://youtu.be/Yyc4ZI_9fSk' }
+]
 
 export default function Home() {
   return (
@@ -222,6 +229,56 @@ export default function Home() {
       </section>
 
       <main className="mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+        <section className="mb-20">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-8">
+            <div>
+              <span className="section-label">Featured work</span>
+              <h2 className="text-2xl md:text-3xl font-semibold text-white mt-2">Project Demos</h2>
+              <p className="text-sm text-zinc-500 mt-2">Quick walkthroughs of a few projects I've built.</p>
+            </div>
+            <a
+              href="/projects"
+              className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+            >
+              View all projects →
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredDemos.map((demo, index) => (
+              <motion.a
+                key={demo.id}
+                href={demo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                viewport={{ once: true }}
+                className="glass-effect rounded-2xl overflow-hidden group card-hover block"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={`https://img.youtube.com/vi/${demo.id}/hqdefault.jpg`}
+                    alt={`${demo.title} demo`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/25 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-red-600 group-hover:bg-red-500 flex items-center justify-center transition-colors">
+                      <Youtube size={22} className="text-white" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                  <h3 className="text-sm font-semibold text-white">{demo.title} Demo</h3>
+                  <ExternalLink size={14} className="text-zinc-600 group-hover:text-zinc-400 transition-colors" />
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </section>
+
         <GitHubActivity />
       </main>
     </div>
