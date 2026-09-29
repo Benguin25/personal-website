@@ -43,7 +43,7 @@ export default function Projects() {
       objectFit: 'contain-full',
       badge: 'Hackathon · UN SDG 11',
       github: 'https://github.com/coltonalmeida/Relay311',
-      youtube: 'https://www.youtube.com/@BenProbert25',
+      youtube: 'https://www.youtube.com/watch?v=Q77brk22QoM',
       technologies: ['Next.js', 'TypeScript', 'Vapi', 'Supabase', 'Google Gemini', 'MapLibre GL'],
       color: 'from-green-500 to-orange-500'
     },
@@ -134,6 +134,11 @@ export default function Projects() {
 
   // TODO(Ben): add any other videos from youtube.com/@BenProbert25 here with their actual titles
   const videos = [
+    {
+      title: 'Relay311 Demo',
+      id: 'Q77brk22QoM',
+      url: 'https://www.youtube.com/watch?v=Q77brk22QoM'
+    },
     {
       title: 'Reservely Demo',
       id: 'USoM37xQ0Oc',
