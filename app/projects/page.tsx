@@ -26,16 +26,6 @@ export default function Projects() {
 
   const projects = [
     {
-      title: 'Board at Work',
-      description: 'Daily puzzle games disguised as workplace apps.',
-      longDescription: 'Six original daily puzzles share one game-engine and skin architecture across a clean Play interface and eight Work disguises inspired by Docs, Sheets, Slides, Slack, Jira, Outlook, Notion, and Terminal. Seeded generation keeps each puzzle deterministic, backed by 451 unit tests and 66 Playwright end-to-end tests.',
-      image: '/images/boardatwork.png',
-      objectFit: 'contain-full',
-      github: 'https://github.com/Benguin25/boardatwork',
-      technologies: ['Next.js', 'React', 'TypeScript', 'Game Development', 'Playwright', 'Vitest'],
-      color: 'from-amber-500 to-blue-600'
-    },
-    {
       title: 'Reservely',
       description: 'A lightweight, low-cost reservation system for small restaurants and cafes.',
       longDescription: 'Reservely is a lightweight, low-cost reservation system built for small restaurants and cafes. Backed by $3,000 in non-dilutive funding from the Ontario government to build the MVP, it features a plug-and-play booking link so restaurants can start accepting reservations with minimal setup.',
@@ -77,6 +67,16 @@ export default function Projects() {
       live: 'https://nephrorx.app/',
       technologies: ['React', 'Python', 'Flask', 'TypeScript', 'Node.js', 'Docker', 'MongoDB', 'OCR', 'NLP', 'Healthcare', '3D Visualization'],
       color: 'from-blue-500 to-cyan-600'
+    },
+    {
+      title: 'Board at Work',
+      description: 'Daily puzzle games disguised as workplace apps.',
+      longDescription: 'Six original daily puzzles share one game-engine and skin architecture across a clean Play interface and eight Work disguises inspired by Docs, Sheets, Slides, Slack, Jira, Outlook, Notion, and Terminal. Seeded generation keeps each puzzle deterministic, backed by 451 unit tests and 66 Playwright end-to-end tests.',
+      image: '/images/boardatwork.png',
+      objectFit: 'contain-full',
+      github: 'https://github.com/Benguin25/boardatwork',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Game Development', 'Playwright', 'Vitest'],
+      color: 'from-amber-500 to-blue-600'
     },
     {
       title: 'MyRoommate',
