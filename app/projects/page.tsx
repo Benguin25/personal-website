@@ -26,6 +26,16 @@ export default function Projects() {
 
   const projects = [
     {
+      title: 'Board at Work',
+      description: 'Daily puzzle games disguised as workplace apps.',
+      longDescription: 'Six original daily puzzles share one game-engine and skin architecture across a clean Play interface and eight Work disguises inspired by Docs, Sheets, Slides, Slack, Jira, Outlook, Notion, and Terminal. Seeded generation keeps each puzzle deterministic, backed by 451 unit tests and 66 Playwright end-to-end tests.',
+      image: '/images/boardatwork.png',
+      objectFit: 'contain-full',
+      github: 'https://github.com/Benguin25/boardatwork',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Game Development', 'Playwright', 'Vitest'],
+      color: 'from-amber-500 to-blue-600'
+    },
+    {
       title: 'Reservely',
       description: 'A lightweight, low-cost reservation system for small restaurants and cafes.',
       longDescription: 'Reservely is a lightweight, low-cost reservation system built for small restaurants and cafes. Backed by $3,000 in non-dilutive funding from the Ontario government to build the MVP, it features a plug-and-play booking link so restaurants can start accepting reservations with minimal setup.',
@@ -48,6 +58,15 @@ export default function Projects() {
       color: 'from-green-500 to-orange-500'
     },
     {
+      title: 'Ashwood',
+      description: 'A severity-ranked emergency department triage platform.',
+      longDescription: 'Patients complete a structured intake while Claude extracts clinical findings without judging urgency. A deterministic CTAS-based rules engine assigns priority with an auditable explanation, then a live queue keeps patient, nurse, doctor, and admin staff surfaces in sync.',
+      image: '/images/ashwood.png',
+      github: 'https://github.com/Benguin25/ashwood',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Claude API', 'Healthcare'],
+      color: 'from-emerald-500 to-cyan-600'
+    },
+    {
       title: 'NephroRx',
       description: 'A comprehensive medication dosing platform for patients with chronic kidney disease.',
       longDescription: 'NephroRx is a full-stack web application that helps healthcare providers calculate accurate medication dosages for chronic kidney disease patients based on their kidney function. It processes MRI/CT data into interactive 3D models with volumetric analysis, and uses OCR/NLP pipelines for automated PDF ingestion that powers real-time eGFR-based dosing calculations, all behind a modern responsive interface.',
@@ -68,6 +87,24 @@ export default function Projects() {
       live: 'https://myroommate.net/',
       technologies: ['React', 'Node.js', 'Full-Stack', 'Web App'],
       color: 'from-teal-500 to-green-600'
+    },
+    {
+      title: 'Bardown Hero',
+      description: 'An arcade-style hockey game built for mobile.',
+      longDescription: 'Swipe to pass, bank, and shoot through a 32-level career with reactive goalies, rebounds, powerups, and local star progression. A puck shop, customizable gear, 20 achievements, guided practice, audio, haptics, and saved settings round out the current game.',
+      images: ['/images/bardownhero-menu.png', '/images/bardownhero.png'],
+      github: 'https://github.com/Benguin25/bardown-hero',
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Mobile', 'Game Development'],
+      color: 'from-cyan-500 to-yellow-500'
+    },
+    {
+      title: 'Wii Sports CV Bot',
+      description: 'Computer-vision automation for Wii Sports Home Run Derby.',
+      longDescription: 'Captures the Dolphin Emulator window and uses OpenCV to detect and track the baseball as it approaches a configurable swing zone, then triggers a swing automatically. Debug and calibration modes provide a live overlay for tuning detection and timing.',
+      image: '/images/wiisportscv.png',
+      github: 'https://github.com/Benguin25/wiiSportsScript',
+      technologies: ['Python', 'OpenCV', 'Computer Vision', 'Automation'],
+      color: 'from-blue-500 to-indigo-600'
     },
     {
       title: 'ClearSite',
@@ -274,20 +311,41 @@ export default function Projects() {
                       transition={{ duration: 0.3 }}
                       className={`relative h-56 lg:h-72 overflow-hidden rounded-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                     >
-                      <button
-                        type="button"
-                        onClick={() => setSelectedImage({ src: project.image, alt: project.title })}
-                        className="relative block w-full h-full cursor-zoom-in"
-                        aria-label={`View ${project.title} image fullscreen`}
-                      >
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className={`w-full h-full ${project.objectFit === 'contain' ? 'object-contain p-4' : project.objectFit === 'contain-full' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.03]`}
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-                      </button>
+                      {project.images ? (
+                        <div className="grid h-full w-full grid-cols-2 gap-2 bg-[#06141f] p-2">
+                          {project.images.map((src, imageIndex) => (
+                            <button
+                              key={src}
+                              type="button"
+                              onClick={() => setSelectedImage({ src, alt: `${project.title} ${imageIndex === 0 ? 'menu' : 'gameplay'}` })}
+                              className="relative h-full overflow-hidden rounded-lg bg-[#071a27] cursor-zoom-in"
+                              aria-label={`View ${project.title} ${imageIndex === 0 ? 'menu' : 'gameplay'} image fullscreen`}
+                            >
+                              <img
+                                src={src}
+                                alt={`${project.title} ${imageIndex === 0 ? 'menu' : 'gameplay'}`}
+                                className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                                loading="lazy"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedImage({ src: project.image, alt: project.title })}
+                          className="relative block w-full h-full cursor-zoom-in"
+                          aria-label={`View ${project.title} image fullscreen`}
+                        >
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className={`w-full h-full ${project.objectFit === 'contain' ? 'object-contain p-4' : project.objectFit === 'contain-full' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.03]`}
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                        </button>
+                      )}
                     </motion.div>
                   </div>
                 </div>
