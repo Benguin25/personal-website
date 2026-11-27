@@ -27,16 +27,18 @@ export default function Experience() {
 
   const workExperiences = [
     {
-      title: 'Incoming Software Developer Co-op',
+      title: 'Software Developer Co-op',
       company: 'Magnet Forensics',
       location: 'Waterloo, Ontario (Hybrid)',
       period: 'Sept 2026 – Dec 2026',
       responsibilities: [
-        'Incoming co-op on the software development team for Fall 2026',
-        'Will ship production features for digital forensics software that acquires, analyzes, and shares evidence from computers, smartphones, and IoT devices',
-        'Magnet\'s software is used by law enforcement and enterprises globally to fight crime and protect national security'
+        'Developing digital forensics artifacts on the Artifacts team, with work spanning Chromium browsers, Firefox storage, and Windows timestamps',
+        'Researching file formats, building parsers, and validating results through testing and code review',
+        'Contributing to Magnet AXIOM while learning production software development practices'
       ],
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-indigo-500 to-purple-500',
+      image: '/magnet-2026/mission.webp',
+      report: { href: '/magnet-2026', label: 'Read my work term report (draft)' }
     },
     {
       title: 'GenAI Engineer Intern',
